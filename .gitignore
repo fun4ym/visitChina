@@ -1,0 +1,9 @@
+# 内部文档 - 绝不推送到GitHub
+docs/
+
+# WorkBuddy工作区配置
+.workbuddy/
+
+# 系统文件
+.DS_Store
+Thumbs.db
