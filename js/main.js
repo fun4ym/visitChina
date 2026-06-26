@@ -1,0 +1,160 @@
+/* ============================================================
+   visitChina Shared JavaScript
+   Features: language switching, cost calculator, analytics, localStorage
+   ============================================================ */
+
+// ── GA4 Analytics (placeholder — replace G-XXXXXXXXXX with real ID) ──
+(function(){
+  var gaId = 'G-XXXXXXXXXX'; // TODO: replace with real GA4 measurement ID
+  if (gaId !== 'G-XXXXXXXXXX') {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+    document.head.appendChild(s);
+    s.onload = function(){
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gaId);
+      window._gtag = gtag;
+    };
+  }
+})();
+
+// ── Meta Pixel (placeholder — replace YOUR_PIXEL_ID) ──
+(function(){
+  var pixelId = 'YOUR_PIXEL_ID'; // TODO: replace with real Meta Pixel ID
+  if (pixelId !== 'YOUR_PIXEL_ID') {
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+      t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', pixelId);
+    fbq('track', 'PageView');
+  }
+})();
+
+// ── Language Switching ──
+(function(){
+  var btns = document.querySelectorAll('.lang-btn');
+  var panels = document.querySelectorAll('.panel');
+  if (!btns.length || !panels.length) return;
+
+  // Load saved preference
+  var savedLang = localStorage.getItem('visitChina_lang');
+  if (savedLang) {
+    var target = document.getElementById('panel-' + savedLang);
+    if (target) {
+      btns.forEach(function(b){ b.classList.remove('active'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      var trigger = document.querySelector('.lang-btn[data-lang="' + savedLang + '"]');
+      if (trigger) trigger.classList.add('active');
+      target.classList.add('active');
+    }
+  }
+
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btns.forEach(function(b){ b.classList.remove('active'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      var lang = btn.dataset.lang;
+      var panel = document.getElementById('panel-' + lang);
+      if (panel) panel.classList.add('active');
+      localStorage.setItem('visitChina_lang', lang);
+      window.scrollTo({top:0, behavior:'smooth'});
+
+      // Track language switch
+      if (window._gtag) {
+        window._gtag('event', 'language_switch', {language: lang});
+      }
+      if (typeof fbq !== 'undefined') {
+        fbq('trackCustom', 'LanguageSwitch', {language: lang});
+      }
+    });
+  });
+})();
+
+// ── Cost Calculator (interactive slider) ──
+(function(){
+  var calcForm = document.getElementById('cost-calc');
+  if (!calcForm) return;
+
+  var sliders = calcForm.querySelectorAll('input[type=range]');
+  var totalEl = document.getElementById('calc-total');
+  var detailEl = document.getElementById('calc-detail');
+  if (!totalEl) return;
+
+  function format(num){ return num.toLocaleString('zh-CN'); }
+
+  function recalc(){
+    var tuition = parseInt(document.getElementById('calc-tuition').value) || 20500;
+    var dormFee = parseInt(document.getElementById('calc-dorm').value) || 1200;
+    var living = parseInt(document.getElementById('calc-living').value) || 1200;
+    var years = 4;
+
+    var totalTuition = tuition * years;
+    var totalDorm = dormFee * 12 * years;
+    var totalLiving = living * 12 * years;
+    var grandTotal = totalTuition + totalDorm + totalLiving;
+
+    totalEl.textContent = '¥' + format(grandTotal);
+    detailEl.textContent = '学费 ¥' + format(totalTuition) + ' + 住宿 ¥' + format(totalDorm) + ' + 生活费 ¥' + format(totalLiving);
+  }
+
+  sliders.forEach(function(slider){
+    var display = document.getElementById(slider.id + '-val');
+    if (display) {
+      display.textContent = '¥' + format(parseInt(slider.value));
+      slider.addEventListener('input', function(){
+        display.textContent = '¥' + format(parseInt(this.value));
+        recalc();
+      });
+    }
+  });
+
+  recalc();
+})();
+
+// ── Checklist localStorage Persistence ──
+(function(){
+  var checklist = document.querySelectorAll('.ci-box');
+  if (!checklist.length) return;
+
+  var storageKey = 'visitChina_checklist_' + (window.location.pathname.replace(/\//g,'_') || 'default');
+
+  // Load saved state
+  var saved = localStorage.getItem(storageKey);
+  var savedStates = saved ? JSON.parse(saved) : {};
+  checklist.forEach(function(box, i){
+    var id = box.dataset.id || ('item-' + i);
+    if (savedStates[id]) box.classList.add('done');
+  });
+
+  // Save on click
+  checklist.forEach(function(box, i){
+    box.addEventListener('click', function(){
+      var id = this.dataset.id || ('item-' + i);
+      var states = {};
+      checklist.forEach(function(b, j){
+        var bid = b.dataset.id || ('item-' + j);
+        states[bid] = b.classList.contains('done');
+      });
+      localStorage.setItem(storageKey, JSON.stringify(states));
+      if (typeof updateProgress === 'function') updateProgress();
+    });
+  });
+
+  // Refresh progress
+  if (typeof updateProgress === 'function') updateProgress();
+})();
+
+// ── Log page view ──
+if (window._gtag) {
+  window._gtag('event', 'page_view_enhanced', {
+    page_title: document.title,
+    page_path: window.location.pathname
+  });
+}
