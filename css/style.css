@@ -226,6 +226,10 @@ footer .ft-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;mar
 footer .ft-links a{color:#81c8f5;text-decoration:none;font-size:11px;}
 footer .ft-divider{width:60px;height:2px;background:rgba(255,255,255,.15);margin:14px auto;}
 footer .ft-copy{color:rgba(255,255,255,.3);}
+footer .ft-powered{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:12px;font-size:10px;color:rgba(255,255,255,.25);}
+footer .ft-powered a{color:rgba(255,255,255,.25);text-decoration:none;display:flex;align-items:center;gap:6px;}
+footer .ft-powered a:hover{color:rgba(255,255,255,.5);}
+footer .ft-powered img{height:16px;width:auto;opacity:.4;}
 
 /* ── Coming Soon ── */
 .coming-soon{position:relative;overflow:hidden;}
