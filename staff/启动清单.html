@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="auth-hash" content="adb15793dbe92165283912089d8e057d09e06a8492f7592d7c53c69e44601fdf">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>业务启动准备清单 · 大连理工大学留学中介项目</title>
+<style>
+/* == Auth Overlay == */
+#auth-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.88);display:none;justify-content:center;align-items:center;z-index:99999;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;}
+.auth-box{background:#fff;border-radius:12px;padding:40px 36px;max-width:380px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+.auth-box .ai{font-size:36px;margin-bottom:12px;}
+.auth-box h2{font-size:18px;color:#1a1a2e;margin:0 0 6px;}
+.auth-box .as{font-size:12px;color:#999;margin:0 0 24px;}
+.auth-box input{width:100%;padding:12px 16px;border:2px solid #e0e0e0;border-radius:8px;font-size:15px;text-align:center;outline:none;box-sizing:border-box;font-family:inherit;}
+.auth-box input:focus{border-color:#0f3460;}
+.auth-box .ae{display:none;color:#e74c3c;font-size:12px;margin:8px 0 0;}
+.auth-box button{width:100%;margin-top:16px;padding:12px;background:#0f3460;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;}
+.auth-box button:hover{background:#16213e;}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:#f0f0f0;color:#1a1a2e;line-height:1.8;font-size:14px;}
+
+.banner{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;padding:40px 36px 32px;}
+.banner-tag{display:inline-block;background:rgba(39,174,96,.2);border:1px solid rgba(39,174,96,.5);border-radius:4px;font-size:11px;padding:3px 14px;letter-spacing:2px;margin-bottom:12px;color:#6ee7a0;}
+.banner h1{font-size:24px;font-weight:900;letter-spacing:2px;margin-bottom:4px;}
+.banner h2{font-size:13px;font-weight:400;opacity:.65;}
+.banner-note{margin-top:14px;font-size:12px;color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);border-radius:6px;padding:8px 14px;display:inline-block;}
+
+.container{max-width:920px;margin:0 auto;padding:0 20px 60px;}
+
+/* 进度条 */
+.progress-bar{background:#fff;border-radius:10px;padding:16px 24px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,.07);display:flex;align-items:center;gap:16px;}
+.progress-bar .pb-label{font-size:12px;font-weight:700;color:#666;white-space:nowrap;}
+.progress-bar .pb-track{flex:1;height:10px;background:#e8edf5;border-radius:5px;overflow:hidden;}
+.progress-bar .pb-fill{height:100%;background:linear-gradient(90deg,#27ae60,#2ecc71);border-radius:5px;transition:width .5s;width:0%;}
+.progress-bar .pb-num{font-size:14px;font-weight:800;color:#27ae60;white-space:nowrap;}
+
+/* TOC */
+.toc{background:#fff;border-radius:10px;padding:18px 24px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,.07);border-left:5px solid #27ae60;}
+.toc h3{font-size:11px;color:#bbb;letter-spacing:3px;margin-bottom:10px;text-transform:uppercase;}
+.toc ol{padding-left:20px;column-count:2;}
+.toc li{font-size:12.5px;line-height:2.4;color:#16213e;break-inside:avoid;}
+.toc li a{color:#16213e;text-decoration:none;}
+
+/* Chapter */
+.chapter{display:flex;align-items:center;gap:12px;margin:30px 0 12px;}
+.chapter-num{width:32px;height:32px;background:#0f3460;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;}
+.chapter h2{font-size:17px;font-weight:800;color:#0f3460;}
+.chapter .ch-progress{margin-left:auto;font-size:11px;color:#999;}
+
+.card{background:#fff;border-radius:10px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.card-title{font-size:14px;font-weight:800;color:#0f3460;margin-bottom:10px;padding-bottom:7px;border-bottom:2px solid #e8edf5;display:flex;align-items:center;gap:8px;}
+.card-title .ct-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-left:auto;}
+.tag-must{background:#fde8e8;color:#c0392b;}
+.tag-rec{background:#e8f4ff;color:#2563a8;}
+.tag-opt{background:#e8f8ee;color:#27ae60;}
+
+/* Checklist items */
+.check-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #f0f0f5;}
+.check-item:last-child{border-bottom:none;}
+.ci-box{width:18px;height:18px;border:2px solid #ccc;border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;transition:all .2s;}
+.ci-box.done{background:#27ae60;border-color:#27ae60;position:relative;}
+.ci-box.done:after{content:"\2713";color:#fff;font-size:12px;position:absolute;top:-2px;left:2px;font-weight:700;}
+.ci-content{flex:1;}
+.ci-content h5{font-size:13px;font-weight:700;margin-bottom:2px;}
+.ci-content p{font-size:12px;color:#666;line-height:1.7;}
+.ci-content .ci-detail{font-size:11.5px;color:#888;margin-top:3px;background:#f8f9ff;border-radius:5px;padding:5px 10px;line-height:1.7;}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:12px;}
+thead tr{background:#0f3460;color:#fff;}
+thead th{padding:7px 10px;text-align:left;font-weight:700;font-size:11px;white-space:nowrap;}
+tbody tr{border-bottom:1px solid #eee;}
+tbody tr:nth-child(even){background:#f8faff;}
+tbody td{padding:6px 10px;vertical-align:middle;}
+
+/* Alerts */
+.alert{border-radius:8px;padding:12px 16px;margin:10px 0;font-size:12px;line-height:1.85;}
+.alert-red{background:#fde8e8;border-left:4px solid #e74c3c;color:#800;}
+.alert-blue{background:#e8f4ff;border-left:4px solid #2563a8;color:#0d3362;}
+.alert-green{background:#e8f8ee;border-left:4px solid #27ae60;color:#1a4a2a;}
+.alert-yellow{background:#fff8e1;border-left:4px solid #f0a040;color:#7a4500;}
+.alert strong{font-weight:800;}
+
+/* Bank cards */
+.bank-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:14px;}
+.bank-card{background:#f8faff;border-radius:8px;padding:12px 14px;border:1px solid #e0e8f5;}
+.bank-card.bc-rec{border-color:#27ae60;background:#f0faf4;}
+.bank-card h5{font-size:13px;font-weight:800;margin-bottom:4px;}
+.bank-card .b-type{font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;display:inline-block;margin-bottom:6px;}
+.bt-pri{background:#27ae60;color:#fff;}
+.bt-sec{background:#2563a8;color:#fff;}
+.bt-alt{background:#f0a040;color:#fff;}
+.bank-card .b-info{font-size:11px;color:#555;line-height:1.7;}
+.bank-card .b-action{font-size:11px;color:#27ae60;font-weight:700;margin-top:6px;}
+
+/* Timeline */
+.phase-tl{position:relative;padding-left:24px;}
+.phase-tl:before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:#e0e8f5;}
+.phase-item{position:relative;padding-bottom:20px;}
+.phase-item:before{content:"";position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:#0f3460;border:2px solid #fff;box-shadow:0 0 0 3px #c5d9f5;}
+.phase-item.urgent:before{background:#e74c3c;box-shadow:0 0 0 3px #fcc;}
+.phase-item h5{font-size:13px;font-weight:800;margin-bottom:2px;}
+.phase-item .ph-time{font-size:11px;color:#999;font-weight:700;}
+.phase-item p{font-size:12px;color:#666;line-height:1.7;}
+
+footer{text-align:center;padding:26px;font-size:11px;color:#bbb;border-top:1px solid #e0e0e0;margin-top:16px;}
+
+@media(max-width:600px){.toc ol{column-count:1;} .banner h1{font-size:18px;} table{font-size:10.5px;} .bank-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- Auth Overlay -->
+<div id="auth-overlay">
+  <div class="auth-box">
+    <div class="ai">🔒</div>
+    <h2>内部资料 · 密码验证</h2>
+    <p class="as">Internal Document · Password Required</p>
+    <form id="auth-form">
+      <input id="auth-input" type="password" placeholder="请输入访问密码" autocomplete="off" autofocus>
+      <p class="ae" id="auth-error">密码错误，请重试</p>
+      <button type="submit">验证 · Verify</button>
+    </form>
+  </div>
+</div>
+
+<!-- Protected Content -->
+<div id="protected-content" style="display:none">
+
+<div class="banner">
+  <div class="banner-tag">&#9650; 启动准备清单 · 内部文件</div>
+  <h1>大连理工大学留学中介项目</h1>
+  <h2>业务启动前全部准备事项 · 合规 / 银行合作 / 供应商 / 运营 / 营销</h2>
+  <div class="banner-note">配套文件：招生简章_中英泰三语.html（对外）&nbsp;|&nbsp;内部资料_顾问备查.html（顾问手册）&nbsp;|&nbsp;本文件（启动清单）</div>
+</div>
+
+<div class="container">
+
+  <!-- 进度概览 -->
+  <div class="progress-bar">
+    <span class="pb-label">总进度</span>
+    <div class="pb-track"><div class="pb-fill" id="pbFill" style="width:0%;"></div></div>
+    <span class="pb-num" id="pbNum">0 / 0</span>
+  </div>
+
+  <!-- 目录 -->
+  <div class="toc">
+    <h3>目录</h3>
+    <ol>
+      <li>公司注册与法律合规</li>
+      <li>银行合作与教育贷款</li>
+      <li>大连理工校方关系建立</li>
+      <li>供应商网络搭建</li>
+      <li>办公与运营基础设施</li>
+      <li>顾问知识储备与培训</li>
+      <li>营销与获客渠道</li>
+      <li>服务交付体系</li>
+      <li>财务与税务</li>
+      <li>风险管理与合规</li>
+      <li>启动时间线总览</li>
+    </ol>
+  </div>
+
+  <!-- ══ 1. 公司注册与法律合规 ══ -->
+  <div class="chapter"><div class="chapter-num">1</div><h2>公司注册与法律合规</h2><span class="ch-progress" id="ch1">0/8</span></div>
+
+  <div class="card">
+    <div class="card-title">在泰国注册公司 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>确定公司股权结构</h5><p>泰国《私立学校法》(Private School Act B.E. 2550) 要求教育类企业泰籍持股至少51%。如你本人非泰籍，需找泰籍合伙人或代持安排。</p><div class="ci-detail">若纯泰籍注册可降低注册资本门槛；含外资则注册资本需≥200万泰铢/外籍员工，且需维持4:1的泰籍:外籍员工比</div></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>公司名称预核准（DBD）</h5><p>向泰国商务部企业发展厅（DBD）提交2-3个备选名称，1-2个工作日审批。建议名称含"Education"或"Consulting"。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>注册公司章程（MOA）</h5><p>拟定公司经营范围（Objective），必须明确包含"教育咨询""留学规划""国际教育服务"等表述。股东信息、注册资本、董事任命一并写入。</p><div class="ci-detail">注册资本建议≥100万泰铢。注册费≈5,000泰铢起（按资本比例）。需在DBD注册后60天内完成税务登记</div></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>税务登记（VAT + 企业所得税）</h5><p>年收入≥180万泰铢须注册VAT（增值税7%）。企业所得税20%。需在DBD注册后60天内在当地税务局办理。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>社会保险登记</h5><p>雇佣员工后30天内须向社保局登记，雇主和员工各缴工资的5%（上限750泰铢/月/人）。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>营业场所租赁合同</h5><p>签订至少3年租约（MOE审查要求）。办公面积≥100㎡（如涉及培训课程则≥200㎡）。需有消防合格证。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>申请教育部私立教育机构许可（如需）</h5><p>纯留学咨询（不提供课程培训）一般无需MOE牌照，只需DBD公司注册。但若计划在办公室提供HSK考前辅导或中文培训课程，则须向私立教育委员会办公室（OPEC）申请"补习学校许可证"，审批3-6个月。</p><div class="ci-detail">建议初期不申请培训牌照，仅做咨询代办；待业务稳定后再考虑加培训资质</div></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>加入TIECA（泰国海外留学咨询协会）</h5><p>TIECA成立于1990年，是泰国留学咨询行业自律组织，加入后可获背书、参加双月行业交流会、对接各国使馆教育处。申请流程：官网tieca.org提交申请→审核→面谈→缴费入会。</p><div class="ci-detail">TIECA会员资格是家长信任的重要背书。虽然非法律强制，但强烈建议第一年内加入。TIECA有Code of Ethics（伦理准则），需遵守</div></div></div>
+  </div>
+
+  <!-- ══ 2. 银行合作与教育贷款 ══ -->
+  <div class="chapter"><div class="chapter-num">2</div><h2>银行合作与教育贷款</h2><span class="ch-progress" id="ch2">0/9</span></div>
+
+  <div class="card">
+    <div class="card-title">教育贷款合作银行对接 <span class="ct-tag tag-must">必须</span></div>
+    <div class="alert alert-blue">
+      <strong>策略：</strong>泰国多家银行有教育贷款产品，与中介合作可形成"贷款推荐→客户获资金→中介获客→银行获利息"的多赢闭环。重点对接明确支持<strong>海外留学</strong>的银行产品。
+    </div>
+
+    <div class="bank-grid">
+      <!-- 泰京银行 -->
+      <div class="bank-card bc-rec">
+        <h5>泰京银行 Krungthai</h5>
+        <span class="b-type bt-pri">优先对接</span>
+        <div class="b-info">
+          <strong>产品：</strong>海外教育贷款<br>
+          <strong>额度：</strong>按实际费用全额贷<br>
+          <strong>期限：</strong>最长10年<br>
+          <strong>利率：</strong>MRR-0.75%（抵押）/ MRR+3%（担保）<br>
+          <strong>支持海外留学：</strong>是，含语言课程
+        </div>
+        <div class="b-action">→ 联系分行企业部洽谈推荐佣金</div>
+      </div>
+
+      <!-- 曼谷银行 -->
+      <div class="bank-card bc-rec">
+        <h5>曼谷银行 Bangkok Bank</h5>
+        <span class="b-type bt-pri">优先对接</span>
+        <div class="b-info">
+          <strong>产品：</strong>Bualuang Saan Fun<br>
+          <strong>额度：</strong>最高500万泰铢<br>
+          <strong>期限：</strong>按抵押物评估<br>
+          <strong>方式：</strong>房产抵押（住宅）<br>
+          <strong>支持海外留学：</strong>多功能贷款，可用
+        </div>
+        <div class="b-action">→ 联系零售银行部，谈留学推荐通道</div>
+      </div>
+
+      <!-- 开泰银行 -->
+      <div class="bank-card">
+        <h5>开泰银行 K-Bank</h5>
+        <span class="b-type bt-sec">备选</span>
+        <div class="b-info">
+          <strong>产品：</strong>教育个人贷款<br>
+          <strong>额度：</strong>实际费用80%，最高75万泰铢<br>
+          <strong>期限：</strong>最长7年<br>
+          <strong>利率：</strong>MRR+4%/年<br>
+          <strong>特点：</strong>无需抵押，1名担保人
+        </div>
+        <div class="b-action">→ 对接消费金融部</div>
+      </div>
+
+      <!-- SCB -->
+      <div class="bank-card">
+        <h5>汇商银行 SCB</h5>
+        <span class="b-type bt-sec">备选</span>
+        <div class="b-info">
+          <strong>产品：</strong>教育及医疗贷款<br>
+          <strong>额度：</strong>2万-200万泰铢<br>
+          <strong>期限：</strong>最长5年<br>
+          <strong>特点：</strong>无需抵押，SCB Easy App线上申请，24小时审批
+        </div>
+        <div class="b-action">→ 适合小额急用客户推荐</div>
+      </div>
+
+      <!-- 储蓄银行 -->
+      <div class="bank-card">
+        <h5>储蓄银行 GSB</h5>
+        <span class="b-type bt-alt">低息选项</span>
+        <div class="b-info">
+          <strong>产品：</strong>Sai Thong个人贷款<br>
+          <strong>额度：</strong>房产抵押评估价90%<br>
+          <strong>期限：</strong>最长25年（抵押）<br>
+          <strong>特点：</strong>利率低，适合有房产家庭
+        </div>
+        <div class="b-action">→ 对接高净值有房产客户</div>
+      </div>
+
+      <!-- TADOO -->
+      <div class="bank-card">
+        <h5>TADOO 教育贷款</h5>
+        <span class="b-type bt-sec">备选</span>
+        <div class="b-info">
+          <strong>产品：</strong>教育贷款（本科/硕士/博士）<br>
+          <strong>期限：</strong>最长10年<br>
+          <strong>支持海外留学：</strong>是，明确支持<br>
+          <strong>特点：</strong>泰国国籍+固定收入+担保人
+        </div>
+        <div class="b-action">→ 第三方平台，可作为补充</div>
+      </div>
+    </div>
+
+    <div class="check-item" style="margin-top:14px;"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>与2-3家银行正式洽谈合作</h5><p>准备公司介绍材料（营业执照、业务模式、年预计推荐客户量），拜访银行分行企业部/零售银行部，谈推荐佣金或渠道合作。</p><div class="ci-detail">话术："我们每年预计推荐XX名留学客户，其中XX%需要教育贷款。希望与贵行建立推荐渠道，客户走贵行贷款通道，贵行给推荐方一定返佣。"</div></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>制作教育贷款对比表（泰文版）</h5><p>将6家银行的产品信息整理成一张对比表（利率/额度/期限/是否需抵押），用泰文编写，方便顾问向家长推荐最合适的贷款方案。</p></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">公司对公账户与跨境支付 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>开立公司对公账户</h5><p>凭公司注册文件在泰京/曼谷/开泰银行开立企业账户。需准备：DBD注册证书、公司章程、董事身份证、印章。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>开通国际汇款（SWIFT）功能</h5><p>用于代缴大连理工学费、住宿费。需开通SWIFT电汇，手续费约500-1,500泰铢/笔（因银行不同）。</p><div class="ci-detail">大连理工收款账户信息需提前向校方索取（户名/账号/SWIFT代码/银行地址），用于代缴学费时的汇款指令</div></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>开通移动支付收款（PromptPay / QR Code）</h5><p>泰国客户偏好扫码支付。开通PromptPay企业二维码，客户直接扫码付中介费，到账快、手续费低。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>汇率管理方案</h5><p>代缴学费时泰铢→人民币汇兑，需关注汇率波动。建议在开泰/曼谷银行开通远期结售汇（Forward）功能锁定汇率，避免汇率风险侵蚀利润。</p><div class="ci-detail">利润来源：代缴学费时按当日汇率+1-2%手续费向客户报价，实际汇出按银行汇率，差额即利润。需密切关注THB/CNY汇率走势</div></div></div>
+  </div>
+
+  <!-- ══ 3. 校方关系 ══ -->
+  <div class="chapter"><div class="chapter-num">3</div><h2>大连理工校方关系建立</h2><span class="ch-progress" id="ch3">0/6</span></div>
+
+  <div class="card">
+    <div class="card-title">与校方建立正式联系 <span class="ct-tag tag-rec">强烈建议</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>联系国际教育学院招生办</h5><p>梁老师/石老师，电话+86-411-84706048，邮箱dutsice@dlut.edu.cn。以泰国留学中介身份发邮件介绍公司、说明每年预计输送学生数量、请求建立合作。</p><div class="ci-detail">邮件模板要点：公司简介→泰国市场分析→每年预计输送学生数→希望获得的合作支持（如录取优先审核、材料要求指导、预科名额保障）→请求电话/视频会议</div></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>获取校方授权/推荐信（如可能）</h5><p>如校方愿意出具"授权招生代理"或"推荐合作伙伴"证明，可在对外宣传中使用，大幅提升家长信任度。即使无正式授权，至少争取一封确认合作的邮件回复。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>实地考察校园（1次）</h5><p>安排1次大连理工实地考察：参观校园、宿舍（南山/博留公寓）、预科教学楼、国际学生服务中心。拍摄实景照片/视频用于营销。</p><div class="ci-detail">考察期间与招生老师当面沟通，了解最新招生政策变化、预科通过率数据、国际学生管理细节</div></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>获取最新招生简章和官方文件</h5><p>每年10-11月校方发布新一年招生政策，及时索取最新版招生简章（PDF）、学费标准、预科招生简章、CSCA考试通知等官方文件。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>熟悉iso.dlut.edu.cn申请系统操作</h5><p>注册一个测试账号，完整走一遍网申流程，截图记录每个步骤。了解12项申请材料的具体格式要求、上传限制、截止时间节点。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>加入校方代理沟通群（如校方有）</h5><p>部分中国高校建有海外代理微信群/QQ群，定期发布招生动态、答疑。问校方是否有此类群组，申请加入。</p></div></div>
+  </div>
+
+  <!-- ══ 4. 供应商网络 ══ -->
+  <div class="chapter"><div class="chapter-num">4</div><h2>供应商网络搭建</h2><span class="ch-progress" id="ch4">0/7</span></div>
+
+  <div class="card">
+    <div class="card-title">翻译公证供应商 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>对接2-3家泰国本地翻译公证公司</h5><p>高中毕业证、成绩单、无犯罪证明等需中英双语公证翻译。找泰国本地有NAATI/CAT认证的翻译公司谈批量折扣。</p><div class="ci-detail">利润模型：翻译公司报价500-800泰铢/份→你向客户报价1,500-2,500泰铢/份→差额为佣金。建议签框架协议锁定价格</div></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>了解泰国外交部认证（Legalization）流程</h5><p>部分材料需经泰国外交部认证+中国驻泰使领馆双认证，周期2-4周。找到代办服务或自己学会流程。</p></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">HSK备考课程供应商 <span class="ct-tag tag-rec">建议</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>对接线上HSK课程平台</h5><p>推荐选项：HelloChinese（APP，免费+付费）、ChineseClass101、孔子学院在线课程、国内HSK培训机构的线上课。谈推荐佣金（通常15-30%）。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>对接泰国本地中文培训机构</h5><p>泰国有多所孔子学院（曼松德、朱拉、清迈、孔敬等）提供HSK备考课。可谈合作推荐学生获取佣金。</p></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">机票与接机供应商 <span class="ct-tag tag-rec">建议</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>对接曼谷-大连航线机票代理</h5><p>曼谷-大连直飞约4.5小时，泰航/南航/春秋等有航线。找IATA认证的泰国本地机票代理谈批量折扣（通常3-8%返佣）。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>大连本地接机服务</h5><p>联系大连理工周边的租车/接送服务，或找校方推荐的接送团队。也可联系已在读的泰国留学生做兼职接机。</p></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">保险供应商 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>对接留学生综合医疗保险供应商</h5><p>中国高校要求留学生购买综合医疗保险。可对接平安/人寿/安联等保险公司的留学生险产品，获取佣金（通常10-20%）。</p><div class="ci-detail">保险产品要求：覆盖在中国境内就医、保额≥40万人民币/年、含意外伤害和住院医疗</div></div></div>
+  </div>
+
+  <!-- ══ 5. 办公与运营 ══ -->
+  <div class="chapter"><div class="chapter-num">5</div><h2>办公与运营基础设施</h2><span class="ch-progress" id="ch5">0/8</span></div>
+
+  <div class="card">
+    <div class="card-title">办公场所 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>租赁办公空间</h5><p>初期建议租小型办公室（30-50㎡），靠近BTS/MRT站方便客户上门。月租15,000-30,000泰铢。含1个咨询室、1个文件区、1个前台。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>办公设备采购</h5><p>电脑×2、打印机/扫描仪（处理申请材料）、文件柜（客户档案）、咨询桌椅、饮水机。预算≈50,000-80,000泰铢。</p></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">通讯与客户管理工具 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>注册LINE Official Account</h5><p>泰国客户首选LINE沟通。注册LINE OA（官方账号），用于客户咨询、群发通知、发送文件。月费约800-2,400泰铢。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>注册微信公众号/企业微信</h5><p>用于与大连理工校方、中国方面供应商沟通。微信是中方主要沟通工具。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>搭建CRM客户管理系统</h5><p>初期可用Google Sheets/Notion管理客户信息（姓名/联系方式/申请进度/缴费记录/合同状态）。客户量＞50后建议上专业CRM（如Zoho/HubSpot免费版）。</p><div class="ci-detail">必管字段：客户ID、学生姓名、家长姓名、电话/LINE、申请年份、申请专业、套餐类型、付款状态、当前阶段（咨询/签约/申请中/已录取/已入学）、续费状态</div></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>建立公司邮箱</h5><p>使用公司域名邮箱（如info@xxx.com），显得专业。可与校方邮件沟通时增加可信度。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>申请泰国本地电话号码</h5><p>准备1个客服热线（手机号即可），在所有对外材料中使用。建议买TrueMove/AIS的靓号。</p></div></div>
+  </div>
+
+  <!-- ══ 6. 知识与培训 ══ -->
+  <div class="chapter"><div class="chapter-num">6</div><h2>顾问知识储备与培训</h2><span class="ch-progress" id="ch6">0/7</span></div>
+
+  <div class="card">
+    <div class="card-title">核心知识储备 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>吃透大连理工招生政策</h5><p>顾问必须烂熟：41个中文授课专业+10个英文授课专业目录、4档学费标准、HSK要求对照表、预科费用¥26,800、CSCA考试要求、申请时间轴、12项材料清单。内部资料_顾问备查.html即为培训教材。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>熟悉CSCA考试注册流程</h5><p>在csca.cn实际注册一个账号，走完报名流程，了解考试科目、费用、出分周期。能向家长清晰解释。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>掌握iso.dlut.edu.cn网申系统操作</h5><p>注册测试账号，完整填写一遍申请表，截图记录每个步骤。能独立代客户完成网申。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>掌握中国X1签证申请全流程</h5><p>了解中国驻泰国大使馆/清迈总领馆的签证材料清单、预约方式、办理周期、费用。能指导客户准备签证材料。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>背熟20个标准话术场景</h5><p>内部资料第3节的20个话术场景，顾问需全部熟读并能灵活运用。特别是"为什么不自己考HSK""学费贵不贵""另一家中介更便宜"三个高频场景。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>了解泰国高中教育体系</h5><p>泰国高中6-3学制（ Matthayom 4-6），毕业证叫M.6证书。了解泰国高考系统（GAT/PAT/Admissions），能将大连理工招生要求与泰国教育体系对接解释。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>制定顾问SOP手册</h5><p>从客户首次咨询到入学报到的标准操作流程：第1次咨询→签约→材料收集→翻译公证→CSCA/HSK→网申→录取→签证→行前→接机→入学，每步有checklist和话术。</p></div></div>
+  </div>
+
+  <!-- ══ 7. 营销与获客 ══ -->
+  <div class="chapter"><div class="chapter-num">7</div><h2>营销与获客渠道</h2><span class="ch-progress" id="ch7">0/8</span></div>
+
+  <div class="card">
+    <div class="card-title">线上营销 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>制作泰文版宣传材料</h5><p>将三语招生简章的关键内容翻译成纯泰文版，制作PDF宣传册、单页海报、Facebook封面图。泰国家长看到泰文才有信任感。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>开设Facebook专页 + 投放广告</h5><p>泰国Facebook使用率极高。开设专页发布留学信息、成功案例、校园介绍。投Facebook Ads定向泰国25-50岁家长群体，预算5,000-10,000泰铢/月。</p><div class="ci-detail">广告素材方向：①"985大学学费仅10万泰铢/年" ②"零基础也能去中国读985" ③"大连理工预本连读，升学有保障"</div></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>开设TikTok账号</h5><p>泰国TikTok用户增长迅速。拍摄大连理工校园风光、泰国留学生日常、HSK学习技巧等短视频。预算有限时先自然流量运营。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>建立LINE群组运营</h5><p>建一个"泰国学生赴大连理工留学交流群"，邀请在读生和意向生家长入群。用在读生真实体验做口碑传播。</p></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">线下获客 <span class="ct-tag tag-rec">建议</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>对接泰国高中学校升学指导老师</h5><p>拜访曼谷及周边府的高中（尤其有中文课程或中文兴趣班的学校），与升学指导老师建立联系，提供招生简章，请其推荐有意向去中国留学的学生。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>参加泰国教育展</h5><p>泰国每年有多个国际教育展（如OCSC国际教育展、TIECA教育展等），设展位直接面对意向家庭。展位费约10,000-30,000泰铢/场。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>设计转介绍奖励机制</h5><p>已签约客户推荐新客户成交后，奖励介绍人2,000-5,000泰铢或减免部分服务费。口碑是最廉价高效的获客方式。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>与中文培训机构合作</h5><p>泰国各府的孔子学院、中文培训机构的学生本身就是潜在客户——他们已经在学中文，有留学中国意愿。谈互荐合作。</p></div></div>
+  </div>
+
+  <!-- ══ 8. 服务交付 ══ -->
+  <div class="chapter"><div class="chapter-num">8</div><h2>服务交付体系</h2><span class="ch-progress" id="ch8">0/6</span></div>
+
+  <div class="card">
+    <div class="card-title">合同与文档模板 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>起草服务合同（泰文+中文双语）</h5><p>合同须明确：服务范围（对应套餐A/B/C）、服务费用及付款方式、双方权利义务、退款条款、免责声明、争议解决方式。建议请泰国律师审核。</p><div class="ci-detail">退款条款关键：申请被拒退多少？学生中途放弃退多少？已发生费用如何扣除？务必写清，避免纠纷</div></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>制作12项申请材料清单模板</h5><p>每项材料配一张说明卡：材料名称→中英对照→格式要求→获取方式→顾问可协助→预计时间。打印成册给客户看。</p></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">服务流程SOP <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>编写12步全链路SOP文档</h5><p>内部资料第2节每个利润点对应一份详细SOP：输入条件→操作步骤→输出物→时间节点→质量标准→异常处理。顾问照着SOP走不会漏环节。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>设计客户进度追踪表</h5><p>每位客户一张追踪表（Excel/CRM），记录12步每步完成状态、负责人、预计/实际完成时间。每周review一次所有在途客户。</p></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">定价与报价体系 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>确定三档套餐最终定价</h5><p>参照内部资料套餐A(¥8K-12K)/B(¥18K-28K)/C(¥35K-50K)，结合泰国市场实际调整为泰铢报价。建议B套餐定价90,000-140,000泰铢。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>制作报价单模板（泰文）</h5><p>客户正式签约前出具的报价单，列明套餐包含服务项、总报价、付款节点。统一模板，顾问不可自行改价。</p></div></div>
+  </div>
+
+  <!-- ══ 9. 财务与税务 ══ -->
+  <div class="chapter"><div class="chapter-num">9</div><h2>财务与税务</h2><span class="ch-progress" id="ch9">0/5</span></div>
+
+  <div class="card">
+    <div class="card-title">财务管理 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>选择记账方式</h5><p>初期可外包给泰国本地会计事务所（月费3,000-8,000泰铢），包括月度记账、VAT申报、年终报税。客户量大后可招全职会计。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>VAT管理</h5><p>服务费收入需缴7% VAT。代收代付性质的费用（如学费、翻译费）如直接付给第三方不构成收入，但需保留完整凭证链。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>现金流管理</h5><p>留学业务有季节性（11月-6月为高峰），7-10月为淡季。需预留3-6个月运营成本作为缓冲。建议设立单独的"客户代收代付账户"与"公司运营账户"分离。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>预收款管理</h5><p>客户预付的中介费在服务未完成前属于负债，需在账上单独列示。服务完成后（学生入学报到）才能确认为收入。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>建立费用审批制度</h5><p>所有客户代付款项（学费/翻译费/签证费等）需双人审核后才能支付。避免单人操作导致错误或资金风险。</p></div></div>
+  </div>
+
+  <!-- ══ 10. 风险管理 ══ -->
+  <div class="chapter"><div class="chapter-num">10</div><h2>风险管理与合规</h2><span class="ch-progress" id="ch10">0/6</span></div>
+
+  <div class="card">
+    <div class="card-title">法律风险防范 <span class="ct-tag tag-must">必须</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>购买专业责任保险（PI Insurance）</h5><p>留学咨询行业有被客户起诉风险（如申请失败要求退款）。购买专业责任保险，保额建议≥100万泰铢，年费约5,000-15,000泰铢。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>合同免责条款设计</h5><p>合同中明确：中介提供咨询和代办服务，不保证录取结果（录取由校方决定）。CSCA/HSK成绩不达标、材料造假等客户原因导致的申请失败，中介不退全款。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>客户数据保护</h5><p>客户护照、成绩单、银行流水等属敏感个人信息。建立文件管理制度：纸质材料锁柜、电子文件加密存储、定期销毁过期材料。遵守泰国《个人数据保护法》(PDPA)。</p></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">业务风险防范 <span class="ct-tag tag-rec">建议</span></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>设置客户付款分阶段机制</h5><p>严禁"全款后付"或"零首付"。建议：签约付50%→录取通知到付30%→签证到手付20%。防止客户中途跑单。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>校方政策变动跟踪机制</h5><p>每年10-11月校方发布新政策时第一时间获取，如学费调整、专业增减、CSCA要求变化等。避免用旧信息误导客户。</p></div></div>
+    <div class="check-item"><div class="ci-box" onclick="toggle(this)"></div><div class="ci-content"><h5>建立投诉处理流程</h5><p>制定客户投诉处理SOP：首次回应≤24小时→调查→给方案→跟进。投诉记录归档，定期复盘避免重复。</p></div></div>
+  </div>
+
+  <!-- ══ 11. 时间线 ══ -->
+  <div class="chapter"><div class="chapter-num">11</div><h2>启动时间线总览</h2></div>
+
+  <div class="card">
+    <div class="card-title">分阶段启动计划</div>
+    <div class="alert alert-yellow">
+      <strong>总周期预估：3-4个月</strong>（从零到接待第一个客户）。如果已有泰国公司实体则可缩短至1-2个月。
+    </div>
+
+    <div class="phase-tl" style="margin-top:16px;">
+      <div class="phase-item urgent">
+        <h5>第1个月：公司注册 + 银行对接</h5>
+        <span class="ph-time">Week 1-4</span>
+        <p>公司名称预核准→MOA注册→税务登记→社保登记→开对公账户→拜访2-3家银行谈教育贷款合作→签订翻译公证供应商协议</p>
+      </div>
+      <div class="phase-item">
+        <h5>第2个月：校方关系 + 顾问培训</h5>
+        <span class="ph-time">Week 5-8</span>
+        <p>发邮件联系大连理工国际教育学院→注册iso.dlut.edu.cn测试账号走通流程→注册csca.cn了解考试→顾问吃透内部资料全部内容→起草服务合同→制定三档套餐最终定价</p>
+      </div>
+      <div class="phase-item">
+        <h5>第3个月：营销启动 + 试运营</h5>
+        <span class="ph-time">Week 9-12</span>
+        <p>制作泰文宣传材料→开设Facebook/TikTok/LINE OA→投放第一批广告→拜访3-5所高中升学指导老师→邀请身边有意向的家庭做首批客户试运营</p>
+      </div>
+      <div class="phase-item">
+        <h5>第4个月：正式接单 + 优化迭代</h5>
+        <span class="ph-time">Week 13-16</span>
+        <p>正式接待付费客户→跑通完整服务流程→收集客户反馈→优化SOP和话术→如有条件安排1次大连理工实地考察→申请加入TIECA</p>
+      </div>
+    </div>
+
+    <div class="alert alert-green" style="margin-top:16px;">
+      <strong>启动资金预算概览：</strong>
+      <table style="margin-top:8px;">
+        <thead><tr><th>项目</th><th>金额（泰铢）</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td>公司注册+税务登记</td><td>20,000-30,000</td><td>含DBD注册费、律师费</td></tr>
+          <tr><td>办公租金（押金3个月）</td><td>45,000-90,000</td><td>15,000-30,000/月×3</td></tr>
+          <tr><td>办公设备</td><td>50,000-80,000</td><td>电脑/打印机/家具</td></tr>
+          <tr><td>营销启动费</td><td>30,000-50,000</td><td>Facebook广告+印刷品</td></tr>
+          <tr><td>合同律师审核</td><td>10,000-20,000</td><td>双语合同起草审核</td></tr>
+          <tr><td>保险</td><td>5,000-15,000</td><td>专业责任保险年费</td></tr>
+          <tr><td>流动资金储备</td><td>100,000-200,000</td><td>3个月运营成本缓冲</td></tr>
+          <tr style="background:#fff8e1;"><td><strong>合计</strong></td><td><strong>260,000-485,000</strong></td><td>约5-10万人民币</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<footer>大连理工大学留学中介项目 · 启动准备清单 · 内部文件 · 整理日期 2026年6月</footer>
+
+<script>
+// localStorage key for this checklist
+var STORAGE_KEY = 'visitChina_startup_checklist';
+
+// Load saved state on page load
+(function(){
+  var saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    var states = JSON.parse(saved);
+    var boxes = document.querySelectorAll('.ci-box');
+    boxes.forEach(function(box, i){
+      var id = box.dataset.id || ('item-' + i);
+      if (states[id]) box.classList.add('done');
+    });
+  }
+  updateProgress();
+})();
+
+function toggle(el){
+  el.classList.toggle('done');
+  saveState();
+  updateProgress();
+}
+
+function saveState(){
+  var boxes = document.querySelectorAll('.ci-box');
+  var states = {};
+  boxes.forEach(function(box, i){
+    var id = box.dataset.id || ('item-' + i);
+    states[id] = box.classList.contains('done');
+  });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(states));
+}
+
+function updateProgress(){
+  var all=document.querySelectorAll('.ci-box');
+  var done=document.querySelectorAll('.ci-box.done');
+  var pct=Math.round(done.length/all.length*100);
+  document.getElementById('pbFill').style.width=pct+'%';
+  document.getElementById('pbNum').textContent=done.length+' / '+all.length;
+  var chapters=document.querySelectorAll('.chapter');
+  chapters.forEach(function(ch){
+    var progressEl=ch.querySelector('.ch-progress');
+    if(!progressEl) return;
+    var next=ch.nextElementSibling;
+    var total=0,done=0;
+    while(next && !next.classList.contains('chapter') && !next.classList.contains('toc') && !next.classList.contains('progress-bar')){
+      if(next.classList.contains('card')){
+        var items=next.querySelectorAll('.ci-box');
+        total+=items.length;
+        done+=next.querySelectorAll('.ci-box.done').length;
+      }
+      next=next.nextElementSibling;
+    }
+    progressEl.textContent=done+'/'+total;
+  });
+}
+</script>
+
+</div>
+
+<script src="../js/auth.js"></script>
+</body>
+</html>
