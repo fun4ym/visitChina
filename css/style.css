@@ -229,7 +229,7 @@ footer .ft-copy{color:rgba(255,255,255,.3);}
 footer .ft-powered{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:12px;font-size:10px;color:rgba(255,255,255,.25);}
 footer .ft-powered a{color:rgba(255,255,255,.25);text-decoration:none;display:flex;align-items:center;gap:6px;}
 footer .ft-powered a:hover{color:rgba(255,255,255,.5);}
-footer .ft-powered img{width:128px;height:128px;vertical-align:middle;background:rgba(255,255,255,.08);border-radius:8px;padding:8px;}
+footer .ft-powered img{width:128px;height:128px;vertical-align:middle;}
 
 /* ── Coming Soon ── */
 .coming-soon{position:relative;overflow:hidden;}
