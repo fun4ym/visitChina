@@ -12,6 +12,7 @@ body{font-family:"Noto Sans SC","Noto Sans Thai","Sukhumvit Set","Tahoma",sans-s
 .brand-bar{background:#fff;border-bottom:1px solid #e8edf5;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 .brand-logo{font-size:16px;font-weight:900;color:#003a7d;letter-spacing:1px;text-decoration:none;display:flex;align-items:center;gap:8px;}
 .brand-logo .bl-flag{font-size:20px;}
+.brand-logo-img{height:24px;width:auto;vertical-align:middle;}
 .brand-nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
 .brand-nav a{font-size:12px;color:#555;text-decoration:none;font-weight:600;padding:4px 10px;border-radius:6px;transition:all .2s;}
 .brand-nav a:hover,.brand-nav a.active{color:#003a7d;background:#f0f5ff;}
@@ -226,10 +227,9 @@ footer .ft-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;mar
 footer .ft-links a{color:#81c8f5;text-decoration:none;font-size:11px;}
 footer .ft-divider{width:60px;height:2px;background:rgba(255,255,255,.15);margin:14px auto;}
 footer .ft-copy{color:rgba(255,255,255,.3);}
-footer .ft-powered{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:12px;font-size:10px;color:rgba(255,255,255,.25);}
-footer .ft-powered a{color:rgba(255,255,255,.25);text-decoration:none;display:flex;align-items:center;gap:6px;}
-footer .ft-powered a:hover{color:rgba(255,255,255,.5);}
-footer .ft-powered img{width:128px;height:128px;vertical-align:middle;}
+footer .ft-powered{text-align:right;margin-top:6px;font-size:10px;color:rgba(255,255,255,.2);}
+footer .ft-powered a{color:rgba(255,255,255,.2);text-decoration:none;}
+footer .ft-powered a:hover{color:rgba(255,255,255,.45);}
 
 /* ── Coming Soon ── */
 .coming-soon{position:relative;overflow:hidden;}
