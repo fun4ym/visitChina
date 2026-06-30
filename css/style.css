@@ -17,14 +17,32 @@ body{font-family:"Noto Sans SC","Noto Sans Thai","Sukhumvit Set","Tahoma",sans-s
 .brand-nav a{font-size:12px;color:#555;text-decoration:none;font-weight:600;padding:4px 10px;border-radius:6px;transition:all .2s;}
 .brand-nav a:hover,.brand-nav a.active{color:#003a7d;background:#f0f5ff;}
 
-/* ── Language Switch Bar ── */
+/* ── Language Switch (legacy lang-bar kept for reference, no longer used) ── */
 .lang-bar{display:flex;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,58,125,.1);margin:18px 0;position:sticky;top:6px;z-index:100;}
 .lang-btn{flex:1;text-align:center;padding:13px 8px;font-size:13px;font-weight:700;color:#888;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;}
 .lang-btn:hover{background:#f0f5ff;}
 .lang-btn.active{color:#003a7d;border-bottom-color:#003a7d;background:#f5f8ff;}
 .lang-btn .flag{font-size:18px;}
+
+/* ── Brand Bar Language Toggle ── */
+.brand-lang-btn{font-size:11px;font-weight:700;color:#003a7d;background:#f0f5ff;border:1.5px solid #c8d8f0;border-radius:8px;padding:5px 12px;cursor:pointer;white-space:nowrap;transition:all .2s;margin-left:auto;letter-spacing:.5px;}
+.brand-lang-btn:hover{background:#dce8ff;border-color:#005bac;}
+
+/* ── Panel visibility (body-class driven) ── */
 .panel{display:none;}
-.panel.active{display:block;}
+/* Main page: lang-th → panel-th, lang-zh → panel-zh */
+.lang-th #panel-th{display:block;}
+.lang-zh #panel-zh{display:block;}
+/* Sub-page EN override */
+.lang-en #panel-en{display:block;}
+.lang-th.lang-en #panel-th,
+.lang-zh.lang-en #panel-zh{display:none;}
+
+/* ── Bilingual text visibility ── */
+.th-text,.zh-text,.en-text{display:none;}
+.lang-th .th-text{display:inline;}
+.lang-zh .zh-text{display:inline;}
+.lang-en .en-text{display:inline;}
 
 /* ── Shared Section ── */
 .section{background:#fff;border-radius:14px;overflow:hidden;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,58,125,.06);}

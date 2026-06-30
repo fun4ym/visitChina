@@ -1,11 +1,13 @@
 /* ============================================================
    visitChina Shared JavaScript
-   Features: language switching, cost calculator, analytics, localStorage
+   Features: brand-bar language toggle, bilingual nav, 
+   sub-page mode-aware (TH/EN or ZH/EN), cost calculator,
+   analytics, localStorage persistence
    ============================================================ */
 
-// ── GA4 Analytics (placeholder — replace G-XXXXXXXXXX with real ID) ──
+// ── GA4 Analytics (placeholder) ──
 (function(){
-  var gaId = 'G-XXXXXXXXXX'; // TODO: replace with real GA4 measurement ID
+  var gaId = 'G-XXXXXXXXXX';
   if (gaId !== 'G-XXXXXXXXXX') {
     var s = document.createElement('script');
     s.async = true;
@@ -21,9 +23,9 @@
   }
 })();
 
-// ── Meta Pixel (placeholder — replace YOUR_PIXEL_ID) ──
+// ── Meta Pixel (placeholder) ──
 (function(){
-  var pixelId = 'YOUR_PIXEL_ID'; // TODO: replace with real Meta Pixel ID
+  var pixelId = 'YOUR_PIXEL_ID';
   if (pixelId !== 'YOUR_PIXEL_ID') {
     !function(f,b,e,v,n,t,s){
       if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -36,44 +38,65 @@
   }
 })();
 
-// ── Language Switching ──
+// ═══════════════════════════════════════
+//  Unified Language System
+// ═══════════════════════════════════════
 (function(){
-  var btns = document.querySelectorAll('.lang-btn');
-  var panels = document.querySelectorAll('.panel');
-  if (!btns.length || !panels.length) return;
+  var isMainPage = !window.location.pathname.includes('/schools/');
+  var toggleBtn = document.getElementById('lang-toggle');
+  if (!toggleBtn) return;
 
-  // Load saved preference
-  var savedLang = localStorage.getItem('visitChina_lang');
-  if (savedLang) {
-    var target = document.getElementById('panel-' + savedLang);
-    if (target) {
-      btns.forEach(function(b){ b.classList.remove('active'); });
-      panels.forEach(function(p){ p.classList.remove('active'); });
-      var trigger = document.querySelector('.lang-btn[data-lang="' + savedLang + '"]');
-      if (trigger) trigger.classList.add('active');
-      target.classList.add('active');
-    }
+  // ── Init body class from localStorage ──
+  var savedLang = localStorage.getItem('visitChina_lang') || 'th';
+  document.body.className = 'lang-' + savedLang;
+
+  // ── Sub-page: check if EN mode was active ──
+  if (!isMainPage) {
+    var subState = localStorage.getItem('visitChina_sub_en');
+    if (subState === '1') document.body.classList.add('lang-en');
   }
 
-  btns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      btns.forEach(function(b){ b.classList.remove('active'); });
-      panels.forEach(function(p){ p.classList.remove('active'); });
-      btn.classList.add('active');
-      var lang = btn.dataset.lang;
-      var panel = document.getElementById('panel-' + lang);
-      if (panel) panel.classList.add('active');
-      localStorage.setItem('visitChina_lang', lang);
-      window.scrollTo({top:0, behavior:'smooth'});
+  // ── Update toggle button label ──
+  function updateBtn() {
+    if (isMainPage) {
+      toggleBtn.innerHTML = document.body.classList.contains('lang-th')
+        ? '🇨🇳 中文'
+        : '🇹🇭 ไทย';
+    } else {
+      var en = document.body.classList.contains('lang-en');
+      var th = document.body.classList.contains('lang-th');
+      if (en) {
+        toggleBtn.innerHTML = th ? '🇹🇭 ไทย' : '🇨🇳 中文';
+      } else {
+        toggleBtn.innerHTML = '🇬🇧 English';
+      }
+    }
+  }
+  updateBtn();
 
-      // Track language switch
-      if (window._gtag) {
-        window._gtag('event', 'language_switch', {language: lang});
-      }
-      if (typeof fbq !== 'undefined') {
-        fbq('trackCustom', 'LanguageSwitch', {language: lang});
-      }
-    });
+  // ── Click handler ──
+  toggleBtn.addEventListener('click', function() {
+    if (isMainPage) {
+      // Main page: toggle TH ↔ ZH
+      var isTh = document.body.classList.contains('lang-th');
+      var newLang = isTh ? 'zh' : 'th';
+      document.body.className = 'lang-' + newLang;
+      localStorage.setItem('visitChina_lang', newLang);
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    } else {
+      // Sub-page: toggle native ↔ EN
+      document.body.classList.toggle('lang-en');
+      var isEn = document.body.classList.contains('lang-en');
+      localStorage.setItem('visitChina_sub_en', isEn ? '1' : '0');
+    }
+    updateBtn();
+
+    if (window._gtag) {
+      window._gtag('event', 'language_switch', {
+        page: isMainPage ? 'main' : 'school',
+        lang: document.body.className
+      });
+    }
   });
 })();
 
@@ -82,43 +105,32 @@
   var navLinks = document.querySelectorAll('.brand-nav a[href^="#"], .brand-logo[href^="#"]');
   if (!navLinks.length) return;
 
-  // Determine which panel is active → get target ID suffix
   function resolveAnchor(hash) {
     var id = hash.replace('#', '');
-    var activePanel = document.querySelector('.panel.active');
-    if (!activePanel) return id;
-
-    if (activePanel.id === 'panel-zh') {
-      // ZH panel uses -zh suffix except for home which is home-zh
-      return id + '-zh';
-    }
-    // TH panel uses bare IDs — no change
+    // ZH panel uses -zh suffix, TH panel uses bare IDs
+    if (document.body.classList.contains('lang-zh')) return id + '-zh';
     return id;
   }
 
   navLinks.forEach(function(link) {
     link.addEventListener('click', function(e) {
       var hash = this.getAttribute('href');
-      if (!hash || hash === '#') return; // skip disabled links
-
-      // Skip the 更多▸ sub-trigger and disabled links
+      if (!hash || hash === '#') return;
       if (this.closest('.dropdown-sub')) return;
       if (this.classList.contains('dd-disabled')) return;
 
       e.preventDefault();
-
       var targetId = resolveAnchor(hash);
       var target = document.getElementById(targetId);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Update URL hash without triggering another scroll
         history.replaceState(null, null, '#' + targetId);
       }
     });
   });
 })();
 
-// ── Cost Calculator (interactive slider) ──
+// ── Cost Calculator ──
 (function(){
   var calcForm = document.getElementById('cost-calc');
   if (!calcForm) return;
@@ -135,12 +147,10 @@
     var dormFee = parseInt(document.getElementById('calc-dorm').value) || 1200;
     var living = parseInt(document.getElementById('calc-living').value) || 1200;
     var years = 4;
-
     var totalTuition = tuition * years;
     var totalDorm = dormFee * 12 * years;
     var totalLiving = living * 12 * years;
     var grandTotal = totalTuition + totalDorm + totalLiving;
-
     totalEl.textContent = '¥' + format(grandTotal);
     detailEl.textContent = '学费 ¥' + format(totalTuition) + ' + 住宿 ¥' + format(totalDorm) + ' + 生活费 ¥' + format(totalLiving);
   }
@@ -155,7 +165,6 @@
       });
     }
   });
-
   recalc();
 })();
 
@@ -163,18 +172,13 @@
 (function(){
   var checklist = document.querySelectorAll('.ci-box');
   if (!checklist.length) return;
-
   var storageKey = 'visitChina_checklist_' + (window.location.pathname.replace(/\//g,'_') || 'default');
-
-  // Load saved state
   var saved = localStorage.getItem(storageKey);
   var savedStates = saved ? JSON.parse(saved) : {};
   checklist.forEach(function(box, i){
     var id = box.dataset.id || ('item-' + i);
     if (savedStates[id]) box.classList.add('done');
   });
-
-  // Save on click
   checklist.forEach(function(box, i){
     box.addEventListener('click', function(){
       var id = this.dataset.id || ('item-' + i);
@@ -187,8 +191,6 @@
       if (typeof updateProgress === 'function') updateProgress();
     });
   });
-
-  // Refresh progress
   if (typeof updateProgress === 'function') updateProgress();
 })();
 
