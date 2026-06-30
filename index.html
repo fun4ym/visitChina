@@ -3,29 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>赴华服务平台 — 留学 · 游学 · 签证 | LazyFirst Co., Ltd.</title>
-<meta name="description" content="LazyFirst Co., Ltd. เป็นแพลตฟอร์มบริการการศึกษาต่อประเทศจีนครบวงจร รับสมัครนักศึกษาไทยเข้าเรียนมหาวิทยาลัยชั้นนำของจีน บริการให้คำปรึกษาด้านการเรียน วีซ่า และการท่องเที่ยว">
-<meta name="keywords" content="เรียนต่อจีน, 留学中国, 大连理工, study in China, Thai students China, ที่ปรึกษาเรียนต่อจีน, 985 university, scholarship China">
-<meta property="og:title" content="赴华服务平台 — 留学 · 游学 · 签证 | LazyFirst">
-<meta property="og:description" content="一站式赴华留学服务，985名校直通车。大连理工大学等中国顶尖大学官方招生合作。">
+<title>แพลตฟอร์มบริการครบวงจรสู่ประเทศจีน — เรียนต่อ · ทัศนศึกษา · ท่องเที่ยว | LazyFirst</title>
+<meta name="description" content="LazyFirst บริการครบวงจรสู่ประเทศจีนสำหรับนักเรียนไทย เรียนต่อ ทัศนศึกษา ท่องเที่ยว ร่วมมือกับมหาวิทยาลัยต้าเหลียนและมหาวิทยาลัยชั้นนำของจีน บริษัทจดทะเบียนในเชียงใหม่">
+<meta property="og:title" content="แพลตฟอร์มบริการครบวงจรสู่ประเทศจีน — เรียนต่อ · ทัศนศึกษา · ท่องเที่ยว | LazyFirst">
+<meta property="og:description" content="บริษัทท้องถิ่นเชียงใหม่ ผู้เชี่ยวชาญด้านการเรียนต่อจีน (มหาวิทยาลัย 985/211) โครงการทัศนศึกษาระยะสั้น วีซ่าท่องเที่ยวจีน ที่ปรึกษาสองภาษาไทย-จีน">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="th_TH">
 <link rel="stylesheet" href="css/style.css">
+<style>
+.section-divider{height:1px;background:#e8edf5;margin:36px 0 24px;}
+.co-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px;}
+.co-card{background:#fff;border-radius:12px;padding:22px 20px;border:1px solid #e8edf5;text-align:center;transition:all .2s;}
+.co-card:hover{border-color:#005bac;box-shadow:0 4px 16px rgba(0,58,125,.08);}
+.co-card .co-icon{font-size:36px;margin-bottom:10px;}
+.co-card h4{font-size:15px;font-weight:800;color:#003a7d;margin-bottom:6px;}
+.co-card p{font-size:12px;color:#666;line-height:1.7;}
+.benefit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+.benefit-card{background:#fff;border-radius:12px;padding:18px 20px;border:1px solid #e8edf5;transition:all .2s;}
+.benefit-card:hover{border-color:#005bac;box-shadow:0 4px 16px rgba(0,58,125,.08);}
+.benefit-card .bf-icon{font-size:28px;margin-bottom:8px;}
+.benefit-card .bf-title{font-size:14px;font-weight:800;color:#003a7d;margin-bottom:6px;}
+.benefit-card .bf-desc{font-size:12px;color:#666;line-height:1.7;}
+.tour-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px;}
+.tour-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,58,125,.08);border:1px solid #e8edf5;transition:all .2s;}
+.tour-card:hover{box-shadow:0 6px 24px rgba(0,58,125,.15);transform:translateY(-3px);}
+.tour-card .tc-img{height:120px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:40px;position:relative;}
+.tour-card .tc-body{padding:16px 18px;}
+.tour-card .tc-body h4{font-size:15px;font-weight:800;color:#003a7d;margin-bottom:4px;}
+.tour-card .tc-body .tc-dur{font-size:11px;color:#f0a040;font-weight:700;margin-bottom:8px;}
+.tour-card .tc-body p{font-size:12px;color:#666;line-height:1.7;margin-bottom:10px;}
+.tour-card .tc-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.tour-card .tc-tags span{font-size:10.5px;padding:3px 8px;border-radius:8px;font-weight:600;background:#f0f5ff;color:#005bac;}
+.city-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:20px;}
+.city-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,58,125,.08);text-align:center;border:1px solid #e8edf5;transition:all .2s;position:relative;}
+.city-card:hover{box-shadow:0 6px 24px rgba(0,58,125,.15);transform:translateY(-3px);}
+.city-card.partner{border-color:#005bac;border-width:2px;}
+.city-card .cc-head{height:90px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:800;letter-spacing:3px;}
+.city-card .cc-body{padding:12px 14px;}
+.city-card .cc-body .cc-name{font-size:14px;font-weight:800;color:#003a7d;margin-bottom:4px;}
+.city-card .cc-body .cc-desc{font-size:11px;color:#888;line-height:1.6;}
+.city-card .cc-tag{position:absolute;top:8px;right:8px;background:#005bac;color:#fff;font-size:9px;padding:2px 8px;border-radius:10px;font-weight:700;letter-spacing:1px;}
+.school-card.disabled{opacity:.7;pointer-events:none;position:relative;}
+.school-card.disabled .sc-img{background:linear-gradient(135deg,#888,#aaa)!important;}
+.school-card.disabled .sc-img::after{content:"即将上线";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.5);color:#fff;font-size:12px;padding:4px 14px;border-radius:10px;}
+.sc-img{position:relative;}
+[lang="th"] .school-card.disabled .sc-img::after{content:"เร็วๆ นี้";}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  "name": "LazyFirst Co., Ltd.",
-  "alternateName": "บจก. เลซี่ เฟิร์ส",
-  "description": "赴华留学服务平台 — 泰国学生赴中国留学、游学、签证一站式服务",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "77/406 Moo 8, Koolpunt Ville 9, Tumbon Ban Whan, Amphur Hang Dong",
-    "addressLocality": "Chiang Mai",
-    "postalCode": "50230",
-    "addressCountry": "TH"
-  },
-  "areaServed": "Thailand"
+  "name": "LazyFirst บริการครบวงจรสู่ประเทศจีน",
+  "description": "บริษัทจดทะเบียนในเชียงใหม่ ผู้เชี่ยวชาญด้านการศึกษาไทย-จีน บริการเรียนต่อจีน (985/211) ทัศนศึกษา วีซ่าท่องเที่ยว",
+  "address": {"@type": "PostalAddress","addressLocality": "Chiang Mai","addressCountry": "TH"}
 }
 </script>
 </head>
@@ -33,162 +62,689 @@
 
 <!-- ══ Brand Bar ══ -->
 <div class="brand-bar">
-  <a href="index.html" class="brand-logo"><img src="assets/logo.png" alt="LazyFirst" class="brand-logo-img">赴华服务平台</a>
+  <a href="#home" class="brand-logo"><img src="assets/logo.png" alt="LazyFirst" class="brand-logo-img">赴华服务平台</a>
   <div class="brand-nav">
-    <a href="index.html" class="active">首页</a>
-    <a href="schools/dlut.html">大连理工</a>
-    <a href="#services">服务项目</a>
+    <a href="#home" class="active">首页</a>
+    <div class="nav-dropdown">
+      <a href="#study">留学服务</a>
+      <div class="dropdown-menu">
+        <a href="schools/dlut.html">大连理工大学</a>
+        <a href="#" class="dd-disabled">北京大学</a>
+        <a href="#" class="dd-disabled">清华大学</a>
+        <div class="dd-divider"></div>
+        <div class="dropdown-sub">
+          <a href="#">更多 ▸</a>
+          <div class="submenu">
+            <a href="schools/gnu.html">🇰🇷 国立居昌大学</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#tours">短期游学</a>
+    <a href="#travel">赴华旅游</a>
     <a href="#contact">联系我们</a>
   </div>
 </div>
 
-<!-- ══ Hero ══ -->
-<div class="hero-portal">
-  <div class="hp-badge">LAZYFIRST · STUDY IN CHINA · 赴华服务</div>
-  <h1>赴华一站式服务平台</h1>
-  <div class="hp-sub">留学 · 游学 · 旅游</div>
-  <div class="hp-tagline">985名校直通车 ｜ 泰国学生专属通道 ｜ 从规划到入学全程陪伴</div>
+<!-- ══ Language Switch ══ -->
+<div class="lang-bar" style="position:sticky;top:0;z-index:150;margin:0;border-radius:0;box-shadow:0 1px 6px rgba(0,0,0,.06);">
+  <div class="lang-btn active" data-lang="th"><span class="flag">🇹🇭</span>ภาษาไทย</div>
+  <div class="lang-btn" data-lang="zh"><span class="flag">🇨🇳</span>中文</div>
 </div>
 
-<div class="container">
+<!-- ═══ Thai Panel (default) ═══ -->
+<div class="panel active" id="panel-th" lang="th">
 
-  <!-- ══ Services ══ -->
-  <div class="section" id="services">
-    <div class="section-header"><div class="ic">🎯</div><h3>我们的服务</h3></div>
-    <div class="section-body">
-      <div class="services-grid">
-        <a href="schools/dlut.html" class="service-card sc-active">
-          <div class="sc-icon">🎓</div>
-          <h4>赴华留学</h4>
-          <p>泰国高中生→中国985/211大学本科。从选校规划、HSK备考、材料准备、网申代办到签证办理，全程一站式服务。</p>
-        </a>
-        <div class="service-card">
-          <div class="sc-icon">✈️</div>
-          <h4>短期游学</h4>
-          <p>寒暑假中国文化体验营、语言强化班、大学暑期学校。适合初中/高中生在假期体验中国校园生活。即将上线</p>
-        </div>
-        <div class="service-card">
-          <div class="sc-icon">🏯</div>
-          <h4>赴华旅游签证</h4>
-          <p>中国旅游签证（L签）代办、行程规划、机票酒店预订。为中国之行提供便利。即将上线</p>
-        </div>
+<!-- ══ #home — หน้าแรก ══ -->
+<div id="home">
+  <div class="hero-portal">
+    <div class="hp-badge">LAZYFIRST · บริการครบวงจรสู่ประเทศจีน</div>
+    <h1>แพลตฟอร์มบริการครบวงจรสู่ประเทศจีน</h1>
+    <div class="hp-sub">เรียนต่อ · ทัศนศึกษา · ท่องเที่ยว</div>
+    <div class="hp-tagline">บริษัทท้องถิ่นเชียงใหม่ · ผู้เชี่ยวชาญด้านการศึกษาไทย-จีน · ดูแลตั้งแต่เริ่มต้นจนถึงเข้าเรียน</div>
+  </div>
+
+  <div class="container">
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">🏢</div><h3>เกี่ยวกับเรา</h3></div>
+      <div class="section-body">
+        <p style="font-size:13px;color:#444;line-height:2;">LazyFirst Co., Ltd. (บริษัท เลซี่ เฟิร์ส จำกัด) จดทะเบียนในจังหวัดเชียงใหม่ เป็นแพลตฟอร์มครบวงจรที่มุ่งเน้น<strong>การแลกเปลี่ยนทางการศึกษาและวัฒนธรรมระหว่างไทย-จีน</strong> เราให้บริการแบบครบวงจรสำหรับนักเรียนไทยและผู้ปกครอง ครอบคลุมการเรียนต่อที่จีน ทัศนศึกษาระยะสั้น วีซ่าท่องเที่ยว โดยมีฐานที่เชียงใหม่และให้บริการทั่วประเทศไทย</p>
+      </div>
+    </div>
+
+    <div class="co-grid">
+      <div class="co-card">
+        <div class="co-icon">🎓</div>
+        <h4>บริการสมัครเรียนต่อจีน</h4>
+        <p>ร่วมมือกับมหาวิทยาลัยชั้นนำ 985/211 ของจีน ตั้งแต่การวางแผนเลือกมหาวิทยาลัย เตรียมสอบ HSK จัดเตรียมเอกสาร ไปจนถึงการยื่นวีซ่า บริการครบวงจรช่วยให้นักเรียนไทยได้เรียนในมหาวิทยาลัยจีนชั้นนำ</p>
+      </div>
+      <div class="co-card">
+        <div class="co-icon">✈️</div>
+        <h4>โครงการทัศนศึกษาระยะสั้น</h4>
+        <p>ค่ายประสบการณ์มหาวิทยาลัยจีนในช่วงปิดเทอม เรียนภาษาจีนเข้มข้น + ดื่มด่ำวัฒนธรรม + สำรวจเมือง เหมาะสำหรับนักเรียนมัธยมและนักศึกษา ได้สัมผัสชีวิตในมหาวิทยาลัยจีนล่วงหน้า</p>
+      </div>
+      <div class="co-card">
+        <div class="co-icon">🏯</div>
+        <h4>บริการท่องเที่ยวจีน</h4>
+        <p>บริการยื่นวีซ่าท่องเที่ยวจีน (L-Visa) วางแผนทริปตามเมืองยอดนิยม จองตั๋วเครื่องบินและโรงแรม ให้นักท่องเที่ยวไทยได้สนุกกับการท่องเที่ยวจีนอย่างง่ายดาย</p>
+      </div>
+      <div class="co-card">
+        <div class="co-icon">🤝</div>
+        <h4>ทำไมต้องเลือกเรา</h4>
+        <p>บริษัทจดทะเบียนในเชียงใหม่ (DBD: 0505568124460) ทีมที่ปรึกษาสองภาษา (ไทย-จีน) ประสบการณ์กว่า 4 ปี ค่าบริการโปร่งใส ติดตามตลอดกระบวนการ ทำให้เส้นทางการเรียนต่อของคุณราบรื่นไร้กังวล</p>
       </div>
     </div>
   </div>
-
-  <!-- ══ Partner Schools ══ -->
-  <div class="section">
-    <div class="section-header"><div class="ic">🏛</div><h3>合作院校</h3></div>
-    <div class="section-body">
-      <div class="school-grid">
-        <!-- DLUT -->
-        <a href="schools/dlut.html" class="school-card">
-          <div class="sc-img">🏫 大连理工大学</div>
-          <div class="sc-body">
-            <h4>大连理工大学 · DUT</h4>
-            <div class="sc-tags">
-              <span class="tag-985">985 / 双一流</span>
-              <span class="tag-qs">15 ESI 前1%</span>
-              <span class="tag-th">预科 + 本科</span>
-            </div>
-            <div class="sc-info">
-              中国教育部直属重点大学，机械工程全国第2。中文授课41个专业，英文授课10个专业。预本连读路径，零基础可入学。理工类年学费仅 ¥20,500。
-            </div>
-          </div>
-        </a>
-        <!-- Coming soon placeholder -->
-        <div class="school-card coming-soon" style="opacity:0.6;pointer-events:none;">
-          <div class="sc-img" style="background:linear-gradient(135deg,#555,#777);">🏛 更多院校</div>
-          <div class="sc-body">
-            <h4>更多合作院校即将上线</h4>
-            <div class="sc-tags"><span class="tag-985">筹备中</span></div>
-            <div class="sc-info">我们正在拓展更多中国顶尖大学的合作渠道，敬请期待。</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ Social Proof ══ -->
-  <div class="social-proof">
-    <h3>🇹🇭 泰国学生赴华留学 · 趋势数据</h3>
-    <div class="sp-stats">
-      <div class="sp-stat">
-        <div class="sp-num">#2</div>
-        <div class="sp-label">泰国是来华留学<br>第二大生源国</div>
-      </div>
-      <div class="sp-stat">
-        <div class="sp-num">28,608+</div>
-        <div class="sp-label">泰国在籍留学生<br>（疫情前峰值）</div>
-      </div>
-      <div class="sp-stat">
-        <div class="sp-num">7所</div>
-        <div class="sp-label">中国大学入选<br>THE世界百强</div>
-      </div>
-      <div class="sp-stat">
-        <div class="sp-num">60%</div>
-        <div class="sp-label">来华留学生<br>来自亚洲国家</div>
-      </div>
-    </div>
-    <p style="font-size:11px;color:#999;margin-top:12px;line-height:1.8;">
-      数据来源：中国教育部来华留学统计、The PIE News (2024.07)、Times Higher Education World Rankings 2024。<br>
-      中国拥有超过3,000所高等院校，来华留学生学费远低于欧美（年均约 ¥19,500–25,000 vs 欧美 £13,000–20,000+），性价比突出。<br>
-      <strong>中泰经贸关系持续深化，掌握中文+专业技能的泰国毕业生在东盟就业市场具有显著竞争优势。</strong>
-    </p>
-  </div>
-
-  <!-- ══ Why Us ══ -->
-  <div class="section">
-    <div class="section-header"><div class="ic">💪</div><h3>为什么选择我们</h3></div>
-    <div class="section-body">
-      <div class="highlight-grid">
-        <div class="highlight-card">
-          <div class="hc-icon">🏢</div>
-          <div class="hc-title">清迈实体公司</div>
-          <div class="hc-desc">LazyFirst Co., Ltd. 在泰国商务部正式注册（DBD: 0505568124460），清迈杭东区实体办公，让您放心托付。</div>
-        </div>
-        <div class="highlight-card">
-          <div class="hc-icon">🎯</div>
-          <div class="hc-title">专注中国名校</div>
-          <div class="hc-desc">聚焦985/211重点大学，不推野鸡学校。每所学校经过实地考察和官方渠道验证。</div>
-        </div>
-        <div class="highlight-card">
-          <div class="hc-icon">🗣</div>
-          <div class="hc-title">中泰双语服务</div>
-          <div class="hc-desc">顾问团队精通中文和泰语，既能与中方学校无缝沟通，也能让泰国学生和家长无障碍交流。</div>
-        </div>
-        <div class="highlight-card">
-          <div class="hc-icon">🔄</div>
-          <div class="hc-title">5年全程跟踪</div>
-          <div class="hc-desc">从申请到毕业，预科1年+本科4年全程跟踪服务。入学后的续签、注册、成绩反馈都有我们。</div>
-        </div>
-        <div class="highlight-card">
-          <div class="hc-icon">💰</div>
-          <div class="hc-title">透明收费</div>
-          <div class="hc-desc">服务费用明码标价，合同条款清晰。无隐形收费，不编造"奖学金""优先录取"等不存在的信息。</div>
-        </div>
-        <div class="highlight-card">
-          <div class="hc-icon">📋</div>
-          <div class="hc-title">全流程代办</div>
-          <div class="hc-desc">从选校规划到签证办理、行前培训到接机入学，12个环节全部有专业顾问协助，家长只需签字确认。</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ Contact ══ -->
-  <div class="section" id="contact">
-    <div class="section-header"><div class="ic">🤝</div><h3>联系我们</h3></div>
-    <div class="section-body">
-      <div class="agent-box">
-        <h4>免费咨询 · ปรึกษาฟรี</h4>
-        <p style="margin-bottom:14px;">如果您或您的孩子有意赴华留学，欢迎联系我们的留学顾问获取免费咨询服务。我们将根据学生的成绩、兴趣和预算，提供个性化的选校和专业规划方案。</p>
-        <p style="font-size:12px;color:#888;">请联系您的留学顾问了解更多详情 · ติดต่อที่ปรึกษาการศึกษาของท่านเพื่อขอรายละเอียดเพิ่มเติม</p>
-      </div>
-    </div>
-  </div>
-
 </div>
+
+<!-- ══ #study — บริการเรียนต่อ ══ -->
+<div id="study">
+  <div class="cover" style="background:linear-gradient(160deg,#0a1628 0%,#0f3460 50%,#005bac 100%);">
+    <div class="cover-badge">STUDY IN CHINA · เรียนต่อจีน</div>
+    <h1>เรียนต่อจีน — ทางเลือกที่ดีที่สุดสำหรับนักเรียนไทย</h1>
+    <div class="cover-divider"></div>
+    <div class="cover-stats">
+      <div class="s"><div class="n">1,300+ พันล้าน</div><div class="l">มูลค่าการค้าไทย-จีนต่อปี (USD)</div></div>
+      <div class="s"><div class="n">12 ปี</div><div class="l">จีนครองอันดับ 1 คู่ค้าใหญ่สุดของไทย</div></div>
+      <div class="s"><div class="n">30-50%</div><div class="l">ส่วนต่างรายได้ผู้มีทักษะภาษาจีน</div></div>
+      <div class="s"><div class="n">฿97,500 ต่อปี</div><div class="l">ค่าเทอมมหาวิทยาลัยจีนเริ่มต้น</div></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">📊</div><h3>ทำไมต้องเลือกเรียนต่อที่จีน</h3></div>
+      <div class="section-body">
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <div class="bf-icon">🤝</div>
+            <div class="bf-title">จีนเป็นคู่ค้าอันดับ 1 ของไทย</div>
+            <div class="bf-desc">ปี 2024 มูลค่าการค้าทวิภาคีไทย-จีนทะลุ 1,300 พันล้านดอลลาร์สหรัฐ จีนครองอันดับ 1 คู่ค้าสูงสุดของไทยต่อเนื่อง 12 ปี โครงการรถไฟไทย-จีน EEC และความร่วมมือทางเศรษฐกิจเติบโตอย่างต่อเนื่อง</div>
+          </div>
+          <div class="benefit-card">
+            <div class="bf-icon">💼</div>
+            <div class="bf-title">ภาษาจีน = เงินเดือนพุ่งกระฉูด</div>
+            <div class="bf-desc">ข้อมูลตลาดแรงงานไทยแสดงว่า บัณฑิตที่พูดจีนคล่องได้รับเงินเดือนเริ่มต้นสูงกว่าตำแหน่งเดียวกัน 30-50% มีบริษัทจีนในไทยกว่า 2,000 แห่ง บริษัทการค้ากับจีนเติบโตขึ้นเรื่อยๆ ผู้มีความสามารถจีนเป็นที่ต้องการสูง</div>
+          </div>
+          <div class="benefit-card">
+            <div class="bf-icon">🏛</div>
+            <div class="bf-title">มหาวิทยาลัยระดับโลก</div>
+            <div class="bf-desc">จีนมี 8 มหาวิทยาลัยติด QS World Top 100, 39 มหาวิทยาลัยโครงการ 985 และ 116 มหาวิทยาลัยโครงการ 211 มหาวิทยาลัยเทคโนโลยีต้าเหลียนและอีกมากมายมีความเป็นเลิศระดับโลกด้านวิศวกรรม วิทยาศาสตร์ และบริหารธุรกิจ</div>
+          </div>
+          <div class="benefit-card">
+            <div class="bf-icon">📍</div>
+            <div class="bf-title">ใกล้บ้าน วัฒนธรรมคล้ายกัน</div>
+            <div class="bf-desc">บินจากไทยไปเมืองหลักของจีนใช้เวลาเพียง 2-4 ชั่วโมง ผู้ปกครองเยี่ยมได้สะดวก วัฒนธรรมอาหารและสภาพอากาศไทย-จีนใกล้เคียงกัน นักเรียนไทยปรับตัวได้เร็ว บูรณาการง่าย Cultural Shock น้อยกว่าเรียนยุโรป/อเมริกามาก</div>
+          </div>
+          <div class="benefit-card">
+            <div class="bf-icon">💰</div>
+            <div class="bf-title">ค่าใช้จ่ายต่ำกว่ายุโรป-อเมริกามาก</div>
+            <div class="bf-desc">ค่าเทอมมหาวิทยาลัยจีนเพียง 1/3 ถึง 1/5 ของประเทศตะวันตก เริ่มต้นเพียง ¥19,500/ปี (ประมาณ 97,500 บาท) รวมค่าครองชีพ 4 ปีใช้จ่ายไม่ถึงครึ่งหนึ่งของเรียนยุโรป/อเมริกา</div>
+          </div>
+          <div class="benefit-card">
+            <div class="bf-icon">🚀</div>
+            <div class="bf-title">โอกาสอาชีพกว้าง เส้นทางชัดเจน</div>
+            <div class="bf-desc">หลังเรียนจบเลือกได้: ① กลับไทยทำงานบริษัทจีนหรือบริษัทการค้าจีน เงินเดือนดี ② ทำงานหรือเริ่มธุรกิจที่จีน จีนมีช่องทางวีซ่าทำงานให้นักศึกษาต่างชาติ ③ เรียนต่อโท-เอกที่มหาวิทยาลัยจีนชั้นนำ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="section">
+      <div class="section-header"><div class="ic">🏛</div><h3>มหาวิทยาลัยพันธมิตร</h3></div>
+      <div class="section-body">
+        <div class="school-grid">
+          <a href="schools/dlut.html" class="school-card">
+            <div class="sc-img" style="background:linear-gradient(135deg,#003a7d,#005bac);">🎓 ม.เทคโนโลยีต้าเหลียน</div>
+            <div class="sc-body">
+              <h4>มหาวิทยาลัยเทคโนโลยีต้าเหลียน</h4>
+              <div class="sc-tags">
+                <span class="tag-985">985 / Double First-Class</span>
+                <span class="tag-qs">15 ESI Top 1%</span>
+                <span class="tag-th">¥19,500 ต่อปี</span>
+              </div>
+              <div class="sc-info">มหาวิทยาลัยหลักของกระทรวงศึกษาธิการจีน 3 สาขา Double First-Class วิศวกรรมศาสตร์ ESI Top 0.01% ของโลก 41 หลักสูตรภาษาจีน + 10 หลักสูตรภาษาอังกฤษ หลักสูตรเตรียมภาษาสู่ปริญญาตรี เริ่มจากศูนย์ก็เข้าเรียนได้</div>
+            </div>
+          </a>
+          <div class="school-card disabled">
+            <div class="sc-img" style="background:linear-gradient(135deg,#8b0000,#c41e3a);">🎓 ม.ปักกิ่ง</div>
+            <div class="sc-body">
+              <h4>มหาวิทยาลัยปักกิ่ง</h4>
+              <div class="sc-tags">
+                <span class="tag-985">985 / Double First-Class</span>
+                <span class="tag-qs">QS Asia #1</span>
+              </div>
+              <div class="sc-info">มหาวิทยาลัยวิจัยชั้นนำของจีน ติด QS World Top 20 เป็นเลิศด้านอักษรศาสตร์ วิทยาศาสตร์ การแพทย์ วิศวกรรม และสังคมศาสตร์ กำลังขยายช่องทางรับนักศึกษา</div>
+            </div>
+          </div>
+          <div class="school-card disabled">
+            <div class="sc-img" style="background:linear-gradient(135deg,#6600a0,#8b00cc);">🎓 ม.ชิงหวา</div>
+            <div class="sc-body">
+              <h4>มหาวิทยาลัยชิงหวา</h4>
+              <div class="sc-tags">
+                <span class="tag-985">985 / Double First-Class</span>
+                <span class="tag-qs">QS World #14</span>
+              </div>
+              <div class="sc-info">สุดยอดมหาวิทยาลัยด้านวิศวกรรมของจีน QS World Top 15 วิศวกรรมศาสตร์ระดับโลก บริหารธุรกิจ สถาปัตยกรรม วิทยาการคอมพิวเตอร์มีชื่อเสียงระดับนานาชาติ กำลังขยายช่องทางรับนักศึกษา</div>
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-info" style="margin-top:14px;">
+          <strong>💡 คำแนะนำ:</strong> ช่องทางรับนักศึกษาสำหรับมหาวิทยาลัยปักกิ่งและชิงหวากำลังขยาย คาดว่าจะเปิดเร็วๆ นี้ หากสนใจโครงการเรียนต่อเกาหลี ดูเพิ่มเติมที่ <a href="schools/gnu.html" style="color:#2563a8;font-weight:700;">🇰🇷 มหาวิทยาลัยชางวอนแห่งชาติ (ทางเลือกเรียนต่อ)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ #tours — ทัศนศึกษาระยะสั้น ══ -->
+<div id="tours">
+  <div class="cover" style="background:linear-gradient(160deg,#1a3a2a 0%,#2a5a40 50%,#3a7a5c 100%);">
+    <div class="cover-badge">STUDY TOUR · ทัศนศึกษาระยะสั้น</div>
+    <h1>โครงการทัศนศึกษาระยะสั้น</h1>
+    <h2>ค่ายมหาวิทยาลัยจีนช่วงปิดเทอม · ภาษาจีนเข้มข้น · ดื่มด่ำวัฒนธรรม</h2>
+    <div class="cover-divider"></div>
+  </div>
+
+  <div class="container">
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">📅</div><h3>ภาพรวมโครงการทัศนศึกษา</h3></div>
+      <div class="section-body">
+        <p style="font-size:12.5px;color:#666;line-height:1.9;">ทัศนศึกษาระยะสั้นเป็นวิธีที่ดีที่สุดในการสัมผัสชีวิตมหาวิทยาลัยจีนและวัฒนธรรมจีน LazyFirst คัดสรรโครงการทัศนศึกษาช่วงปิดเทอมจากมหาวิทยาลัยจีนชั้นนำหลายแห่ง ครอบคลุมหลักสูตรภาษาจีน กิจกรรมวัฒนธรรม สำรวจเมือง และปฏิบัติการวิทยาศาสตร์ เหมาะสำหรับนักเรียนมัธยมต้น มัธยมปลาย และนักศึกษา:</p>
+      </div>
+    </div>
+
+    <div class="tour-grid">
+      <div class="tour-card">
+        <div class="tc-img" style="background:linear-gradient(135deg,#003a7d,#0070c0);">🌊</div>
+        <div class="tc-body">
+          <h4>ค่ายฤดูร้อน ม.เทคโนโลยีต้าเหลียน</h4>
+          <div class="tc-dur">2-4 สัปดาห์ · ก.ค.-ส.ค. ของทุกปี</div>
+          <p>หลักสูตรภาษาจีนเข้มข้น + กิจกรรมวัฒนธรรมจีน (พู่กันจีน, วูซู, ตัดกระดาษ) + สำรวจเมืองต้าเหลียน พักหอพักมหาวิทยาลัย สัมผัสชีวิตนักศึกษาจีนล่วงหน้า</p>
+          <div class="tc-tags">
+            <span>ภาษาจีน</span><span>กิจกรรมวัฒนธรรม</span><span>สำรวจเมือง</span><span>อายุ 15-22</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tc-img" style="background:linear-gradient(135deg,#8b0000,#c41e3a);">🏯</div>
+        <div class="tc-body">
+          <h4>ค่ายภาษาจีนเข้มข้น ม.ปักกิ่ง</h4>
+          <div class="tc-dur">3 สัปดาห์ · ม.ค. / ก.ค.</div>
+          <p>เรียนภาษาจีนในมหาวิทยาลัยปักกิ่ง เช้าเรียนภาษา บ่ายเวิร์คช็อปวัฒนธรรม เสาร์-อาทิตย์เที่ยวพระราชวังต้องห้าม กำแพงเมืองจีน จบหลักสูตรรับใบประกาศจากมหาวิทยาลัยปักกิ่ง</p>
+          <div class="tc-tags">
+            <span>ภาษาจีนเข้มข้น</span><span>เวิร์คช็อป</span><span>มรดกโลก</span><span>อายุ 16-25</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tc-img" style="background:linear-gradient(135deg,#6600a0,#8b00cc);">🔬</div>
+        <div class="tc-body">
+          <h4>ค่ายเทคโนโลยี ม.ชิงหวา</h4>
+          <div class="tc-dur">2 สัปดาห์ · ก.ค. ของทุกปี</div>
+          <p>ค่าย STEM: เยี่ยมชมห้องแล็บชิงหวา หุ่นยนต์เบื้องต้น AI พื้นฐาน การพิมพ์ 3 มิติ พิพิธภัณฑ์วิทยาศาสตร์ปักกิ่ง จุดประกายความสนใจเทคโนโลยี เหมาะสำหรับนักเรียน ม.ปลาย สายวิทย์</p>
+          <div class="tc-tags">
+            <span>STEM</span><span>ห้องแล็บ</span><span>เขียนโปรแกรม</span><span>อายุ 15-19</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-info" style="margin-top:20px;">
+      <strong>📌 ข้อควรรู้ก่อนสมัคร:</strong> โครงการข้างต้นเป็นตัวอย่างอ้างอิง วันเวลา ค่าใช้จ่าย และหลักสูตรจริงขึ้นอยู่กับประกาศของมหาวิทยาลัยในปีนั้นๆ โครงการทัศนศึกษาของมหาวิทยาลัยปักกิ่งและชิงหวายังอยู่ในระหว่างการประสานงาน ค่ายฤดูร้อนมหาวิทยาลัยต้าเหลียนสามารถปรึกษาผ่านที่ปรึกษาการศึกษาได้แล้ว ติดต่อที่ปรึกษาเพื่อขอข้อมูลล่าสุด
+    </div>
+  </div>
+</div>
+
+<!-- ══ #travel — ท่องเที่ยวจีน ══ -->
+<div id="travel">
+  <div class="cover" style="background:linear-gradient(160deg,#5a1a0a 0%,#8a3020 50%,#b04a30 100%);">
+    <div class="cover-badge">TRAVEL TO CHINA · ท่องเที่ยวจีน</div>
+    <h1>ท่องเที่ยวจีน</h1>
+    <h2>ค้นพบเสน่ห์ไม่รู้จบของจีน · บริการวีซ่า · วางแผนท่องเที่ยว</h2>
+    <div class="cover-divider"></div>
+  </div>
+
+  <div class="container">
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">🌏</div><h3>ทำไมต้องเลือกท่องเที่ยวจีน</h3></div>
+      <div class="section-body">
+        <p style="font-size:13px;color:#444;line-height:2;">จีนมีแหล่งมรดกโลกจากองค์การยูเนสโกถึง 55 แห่ง มากที่สุดในโลก จากเมืองหลวงพันปีสู่มหานครทันสมัย จากขุนเขาสูงตระหง่านสู่เมืองน้ำเจียงหนาน จากสวรรค์นักชิมสู่สวรรค์นักช้อป จีนมอบประสบการณ์ที่ไม่มีใครเทียบได้ นักท่องเที่ยวไทยได้รับ<strong>การยกเว้นวีซ่าระหว่างไทย-จีน</strong> (พำนักครั้งละไม่เกิน 30 วัน) หรือยื่นขอ L-Visa เพื่อขยายเวลาพำนัก</p>
+      </div>
+    </div>
+
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">🏙</div><h3>เมืองท่องเที่ยวยอดนิยม</h3></div>
+      <div class="section-body">
+        <p style="font-size:12px;color:#888;margin-bottom:14px;">เมืองที่ระบุ「มหาวิทยาลัยพันธมิตร」มีโครงการเรียนต่อของเรา</p>
+        <div class="city-grid">
+          <div class="city-card partner">
+            <div class="cc-tag">มหาวิทยาลัย</div>
+            <div class="cc-head" style="background:linear-gradient(135deg,#c41e3a,#e04050);">🏯 ปักกิ่ง</div>
+            <div class="cc-body">
+              <div class="cc-name">ปักกิ่ง · เมืองหลวง</div>
+              <div class="cc-desc">พระราชวังต้องห้าม กำแพงเมืองจีน จัตุรัสเทียนอันเหมิน ที่ตั้ง ม.ปักกิ่งและม.ชิงหวา เมืองหลวง 6 ราชวงศ์</div>
+            </div>
+          </div>
+          <div class="city-card partner">
+            <div class="cc-tag">มหาวิทยาลัย</div>
+            <div class="cc-head" style="background:linear-gradient(135deg,#003a7d,#0070c0);">🌊 ต้าเหลียน</div>
+            <div class="cc-body">
+              <div class="cc-name">ต้าเหลียน · เมืองชายทะเล</div>
+              <div class="cc-desc">จัตุรัสซิงไห่ หาดจินซือถาน ลวี่ซุ่นกู่ ที่ตั้ง ม.เทคโนโลยีต้าเหลียน เมืองชายทะเลแสนโรแมนติก</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#1a3a6e,#2563a8);">🌃 เซี่ยงไฮ้</div>
+            <div class="cc-body">
+              <div class="cc-name">เซี่ยงไฮ้ · มหานครโลก</div>
+              <div class="cc-desc">เดอะบันด์ ดิสนีย์แลนด์ ถนนนานจิง ศูนย์กลางเศรษฐกิจจีน</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#8b6914,#b8960a);">🏛 ซีอาน</div>
+            <div class="cc-body">
+              <div class="cc-name">ซีอาน · เมืองหลวงพันปี</div>
+              <div class="cc-desc">สุสานทหารดินเผา เจดีย์ต้าหยั่น กำแพงเมือง เมืองหลวง 13 ราชวงศ์ จุดเริ่มต้นเส้นทางสายไหม</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#2a6e2a,#3a8e3a);">🐼 เฉิงตู</div>
+            <div class="cc-body">
+              <div class="cc-name">เฉิงตู · แดนสวรรค์</div>
+              <div class="cc-desc">ศูนย์วิจัยแพนด้ายักษ์ ถนนกว่านจ้าย หม้อไฟเสฉวน เมืองนักชิม</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#8b1a1a,#b03030);">🌺 กวางโจว</div>
+            <div class="cc-body">
+              <div class="cc-name">กวางโจว · ไข่มุกใต้</div>
+              <div class="cc-desc">หอกวางโจว ไป๋หยุนซาน ล่องเรือแม่น้ำจูเจียง แหล่งอาหารกวางตุ้ง</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#1a5a4a,#2a7a5c);">🌿 หังโจว</div>
+            <div class="cc-body">
+              <div class="cc-name">หังโจว · สวรรค์บนดิน</div>
+              <div class="cc-desc">ทะเลสาบซีหู วัดหลิงหยิ่น ตัวแทนเมืองน้ำเจียงหนาน ที่ตั้ง Alibaba</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#4a6a1a,#5a8a2a);">🌸 คุนหมิง</div>
+            <div class="cc-body">
+              <div class="cc-name">คุนหมิง · เมืองฤดูใบไม้ผลิ</div>
+              <div class="cc-desc">ป่าหิน ทะเลสาบเตียนฉือ วัฒนธรรมชนกลุ่มน้อยยูนนาน ใกล้ไทยที่สุด</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">🛂</div><h3>บริการวีซ่า</h3></div>
+      <div class="section-body">
+        <p style="font-size:12.5px;color:#666;line-height:1.9;">บริการยื่นวีซ่าท่องเที่ยวจีน (L-Visa) ครบวงจร <strong>ตรวจเอกสาร กรอกแบบฟอร์ม นัดหมายยื่น ติดตามสถานะ</strong> ยังให้บริการวีซ่าหลายเที่ยวและวีซ่าธุรกิจ (M-Visa) ติดต่อที่ปรึกษาเพื่อขอข้อมูลนโยบายวีซ่าล่าสุด เอกสารที่ต้องใช้ และค่าธรรมเนียม</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ #contact — ติดต่อเรา ══ -->
+<div id="contact">
+  <div class="container" style="margin-top:30px;">
+    <div class="section">
+      <div class="section-header"><div class="ic">📞</div><h3>ติดต่อเรา</h3></div>
+      <div class="section-body">
+        <div class="agent-box">
+          <h4>ปรึกษาฟรี · บริการครบวงจรโดยที่ปรึกษาการศึกษา</h4>
+          <p style="margin-bottom:20px;">ที่ปรึกษาการศึกษาสองภาษา (ไทย-จีน) ให้บริการครบวงจรตั้งแต่การวางแผนเลือกมหาวิทยาลัยจนถึงรายงานตัวเข้าเรียน ไม่ว่าคุณต้องการสอบถามเรื่องเรียนต่อจีน ทัศนศึกษาระยะสั้น หรือวีซ่าท่องเที่ยว เราพร้อมให้คำปรึกษาอย่างมืออาชีพ</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:12.5px;margin-bottom:20px;text-align:left;max-width:500px;margin-left:auto;margin-right:auto;">
+            <div>✓ วางแผนเลือกสาขา-มหาวิทยาลัย</div><div>✓ แปลเอกสารและรับรองเอกสาร</div>
+            <div>✓ วางแผนเตรียมสอบ HSK</div><div>✓ สมัครออนไลน์และตรวจเอกสาร</div>
+            <div>✓ ดำเนินการวีซ่าครบวงจร</div><div>✓ ปฐมนิเทศก่อนเดินทาง+รับสนามบิน</div>
+            <div>✓ จองที่พัก+แนะนำการเข้าเรียน</div><div>✓ สนับสนุนต่อเนื่องระหว่างเรียน</div>
+            <div>✓ ปรึกษาโครงการทัศนศึกษา</div><div>✓ บริการยื่นวีซ่าท่องเที่ยว</div>
+          </div>
+          <p style="font-size:12px;opacity:.75;">LazyFirst Co., Ltd. · DBD: 0505568124460 · เชียงใหม่ · ประเทศไทย</p>
+          <p style="font-size:12px;opacity:.75;">KOOLPUNT VILLE 9, 77/406 Moo 8, Hang Dong, Chiang Mai 50230</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /panel-th -->
+
+<!-- ═══ Chinese Panel ═══ -->
+<div class="panel" id="panel-zh" lang="zh">
+
+<!-- ══ #home-zh — 首页 ══ -->
+<div id="home-zh">
+  <div class="hero-portal">
+    <div class="hp-badge">LAZYFIRST · 赴华一站式服务</div>
+    <h1>赴华一站式服务平台</h1>
+    <div class="hp-sub">留学 · 游学 · 旅游</div>
+    <div class="hp-tagline">清迈本地实体公司 · 专注中泰教育交流 · 从规划到入学全程陪伴</div>
+  </div>
+
+  <div class="container">
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">🏢</div><h3>关于我们</h3></div>
+      <div class="section-body">
+        <p style="font-size:13px;color:#444;line-height:2;">LazyFirst Co., Ltd.（บริษัท เลซี่ เฟิร์ส จำกัด）成立于泰国清迈，是一家专注于<strong>中泰教育交流与文化服务</strong>的综合性平台。我们致力于为泰国学生和家长提供赴华留学、短期游学、旅游签证等一站式服务，以清迈为基地，辐射泰国全境。</p>
+      </div>
+    </div>
+
+    <div class="co-grid">
+      <div class="co-card">
+        <div class="co-icon">🎓</div>
+        <h4>赴华留学申请</h4>
+        <p>合作中国985/211名校，从选校规划、HSK备考、材料准备到签证办理，全程一站式服务，助泰国学子圆梦中国名校。</p>
+      </div>
+      <div class="co-card">
+        <div class="co-icon">✈️</div>
+        <h4>短期游学项目</h4>
+        <p>寒暑假中国名校体验营，汉语强化+文化沉浸+城市探索。适合初高中及大学生，提前感受中国校园生活。</p>
+      </div>
+      <div class="co-card">
+        <div class="co-icon">🏯</div>
+        <h4>赴华旅游服务</h4>
+        <p>中国旅游签证（L签）代办、热门城市行程规划、机票酒店预订。让泰国游客轻松畅游中国。</p>
+      </div>
+      <div class="co-card">
+        <div class="co-icon">🤝</div>
+        <h4>为什么选择我们</h4>
+        <p>清迈实体公司（DBD: 0505568124460）、中泰双语顾问团队、4年+行业经验、透明收费、全程跟踪，让留学之路安心无忧。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ #study-zh — 留学服务 ══ -->
+<div id="study-zh">
+  <div class="cover" style="background:linear-gradient(160deg,#0a1628 0%,#0f3460 50%,#005bac 100%);">
+    <div class="cover-badge">STUDY IN CHINA · 赴华留学</div>
+    <h1>赴华留学 — 泰国学子的最佳选择</h1>
+    <div class="cover-divider"></div>
+    <div class="cover-stats">
+      <div class="s"><div class="n">1,300亿+</div><div class="l">中泰年贸易额（美元）</div></div>
+      <div class="s"><div class="n">12年</div><div class="l">中国蝉联泰国最大贸易伙伴</div></div>
+      <div class="s"><div class="n">30-50%</div><div class="l">中文人才薪资溢价</div></div>
+      <div class="s"><div class="n">¥19,500起</div><div class="l">中国名校年学费</div></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">📊</div><h3>为什么选择赴华留学</h3></div>
+      <div class="section-body">
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <div class="bf-icon">🤝</div>
+            <div class="bf-title">中国是泰国最大贸易伙伴</div>
+            <div class="bf-desc">2024年中泰双边贸易额突破1,300亿美元，中国连续12年保持泰国第一大贸易伙伴地位。中泰铁路、东部经济走廊（EEC）等重大项目持续推进，两国经贸关系日益紧密。</div>
+          </div>
+          <div class="benefit-card">
+            <div class="bf-icon">💼</div>
+            <div class="bf-title">中文能力 = 薪资大幅提升</div>
+            <div class="bf-desc">泰国招聘市场数据显示，具备流利中文能力的毕业生，起薪比同岗位高出30%-50%。在泰中资企业超过2,000家，对华贸易公司数量持续增长，中文人才供不应求。</div>
+          </div>
+          <div class="benefit-card">
+            <div class="bf-icon">🏛</div>
+            <div class="bf-title">世界一流大学资源</div>
+            <div class="bf-desc">中国拥有8所QS世界排名前100的大学，39所985工程重点大学、116所211工程院校。大连理工大学等名校在工程、科技、经管领域具有世界级教学科研实力。</div>
+          </div>
+          <div class="benefit-card">
+            <div class="bf-icon">📍</div>
+            <div class="bf-title">地理位置近、文化亲近</div>
+            <div class="bf-desc">泰国飞中国主要城市仅2-4小时航程，家长探访方便。中泰两国饮食、气候、生活方式相近，泰国留学生适应快、融入容易，文化冲击远小于欧美留学。</div>
+          </div>
+          <div class="benefit-card">
+            <div class="bf-icon">💰</div>
+            <div class="bf-title">留学成本远低于欧美</div>
+            <div class="bf-desc">中国大学本科学费仅为欧美国家的1/3到1/5，年学费低至¥19,500起（约97,500泰铢）。加上生活成本优势，四年总花费约为欧美留学的一半以下。</div>
+          </div>
+          <div class="benefit-card">
+            <div class="bf-icon">🚀</div>
+            <div class="bf-title">就业前景广阔、路径清晰</div>
+            <div class="bf-desc">毕业后可选择：① 回泰国入职中资企业或对华贸易公司，薪资优渥；② 留华就业或创业，中国为国际学生提供工作签证通道；③ 继续攻读中国名校硕博学位。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="section">
+      <div class="section-header"><div class="ic">🏛</div><h3>合作院校</h3></div>
+      <div class="section-body">
+        <div class="school-grid">
+          <a href="schools/dlut.html" class="school-card">
+            <div class="sc-img" style="background:linear-gradient(135deg,#003a7d,#005bac);">🎓 大连理工大学</div>
+            <div class="sc-body">
+              <h4>大连理工大学</h4>
+              <div class="sc-tags">
+                <span class="tag-985">985 / 双一流</span>
+                <span class="tag-qs">15个ESI前1%</span>
+                <span class="tag-th">¥19,500起/年</span>
+              </div>
+              <div class="sc-info">中国教育部直属全国重点大学，3个双一流建设学科，工程学ESI全球前万分之一。41个中文授课+10个英文授课专业，预本连读路径，零基础可入学。</div>
+            </div>
+          </a>
+          <div class="school-card disabled">
+            <div class="sc-img" style="background:linear-gradient(135deg,#8b0000,#c41e3a);">🎓 北京大学</div>
+            <div class="sc-body">
+              <h4>北京大学</h4>
+              <div class="sc-tags">
+                <span class="tag-985">985 / 双一流</span>
+                <span class="tag-qs">QS亚洲#1</span>
+              </div>
+              <div class="sc-info">中国最顶尖的综合性研究型大学，QS世界排名前20。文、理、医、工、社科全面领先，国际化程度极高。招生合作渠道拓展中。</div>
+            </div>
+          </div>
+          <div class="school-card disabled">
+            <div class="sc-img" style="background:linear-gradient(135deg,#6600a0,#8b00cc);">🎓 清华大学</div>
+            <div class="sc-body">
+              <h4>清华大学</h4>
+              <div class="sc-tags">
+                <span class="tag-985">985 / 双一流</span>
+                <span class="tag-qs">QS世界#14</span>
+              </div>
+              <div class="sc-info">中国工程科技领域最高学府，QS世界排名前15。工科全球顶尖，经管、建筑、计算机等学科享誉世界。招生合作渠道拓展中。</div>
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-info" style="margin-top:14px;">
+          <strong>💡 提示：</strong>北京大学、清华大学招生合作渠道正在拓展中，预计近期上线。如需咨询韩国留学项目，请查看 <a href="schools/gnu.html" style="color:#2563a8;font-weight:700;">🇰🇷 国立居昌大学（留学备选方案）</a>。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ #tours-zh — 短期游学 ══ -->
+<div id="tours-zh">
+  <div class="cover" style="background:linear-gradient(160deg,#1a3a2a 0%,#2a5a40 50%,#3a7a5c 100%);">
+    <div class="cover-badge">STUDY TOUR · 短期游学</div>
+    <h1>短期游学项目</h1>
+    <h2>寒暑假中国名校体验营 · 汉语强化 · 文化沉浸</h2>
+    <div class="cover-divider"></div>
+  </div>
+
+  <div class="container">
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">📅</div><h3>游学项目总览</h3></div>
+      <div class="section-body">
+        <p style="font-size:12.5px;color:#666;line-height:1.9;">短期游学是体验中国校园生活、感受中国文化最直接的方式。LazyFirst为泰国学生精选多所中国名校的寒暑假游学项目，涵盖汉语课程、文化体验、城市探索、科技实践等丰富内容，适合初中生、高中生及大学生:</p>
+      </div>
+    </div>
+
+    <div class="tour-grid">
+      <div class="tour-card">
+        <div class="tc-img" style="background:linear-gradient(135deg,#003a7d,#0070c0);">🌊</div>
+        <div class="tc-body">
+          <h4>大连理工暑期夏令营</h4>
+          <div class="tc-dur">2周 / 4周 · 每年7-8月</div>
+          <p>汉语强化课程 + 中国文化体验（书法、武术、剪纸）+ 大连城市探索。入住大学宿舍，提前体验中国大学生活。</p>
+          <div class="tc-tags">
+            <span>汉语课程</span><span>文化体验</span><span>城市探索</span><span>15-22岁</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tc-img" style="background:linear-gradient(135deg,#8b0000,#c41e3a);">🏯</div>
+        <div class="tc-body">
+          <h4>北京大学汉语沉浸营</h4>
+          <div class="tc-dur">3周 · 每年1月（寒假）/ 7月（暑假）</div>
+          <p>北大校园内沉浸式汉语学习，上午语言课+下午文化工作坊，周末游览故宫、长城、颐和园等世界文化遗产。结业颁发北大培训证书。</p>
+          <div class="tc-tags">
+            <span>沉浸式汉语</span><span>文化工作坊</span><span>北京名胜</span><span>16-25岁</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tc-img" style="background:linear-gradient(135deg,#6600a0,#8b00cc);">🔬</div>
+        <div class="tc-body">
+          <h4>清华大学科技探索营</h4>
+          <div class="tc-dur">2周 · 每年7月</div>
+          <p>STEM主题短训：清华实验室参观、机器人编程入门、人工智能科普讲座、3D打印体验。结合北京科技馆、中关村参访，激发科技兴趣。适合理工科方向的高中生。</p>
+          <div class="tc-tags">
+            <span>STEM课程</span><span>实验室参观</span><span>编程入门</span><span>15-19岁</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-info" style="margin-top:20px;">
+      <strong>📌 游学报名须知：</strong>以上项目为参考方案，实际开营时间、费用和课程安排以当年学校公告为准。北京大学、清华大学游学项目尚在对接中，大连理工暑期夏令营已可通过留学顾问咨询。具体费用、签证、接送安排请联系顾问获取最新方案。
+    </div>
+  </div>
+</div>
+
+<!-- ══ #travel-zh — 赴华旅游 ══ -->
+<div id="travel-zh">
+  <div class="cover" style="background:linear-gradient(160deg,#5a1a0a 0%,#8a3020 50%,#b04a30 100%);">
+    <div class="cover-badge">TRAVEL TO CHINA · 赴华旅游</div>
+    <h1>赴华旅游</h1>
+    <h2>探索中国的无限魅力 · 签证代办 · 行程规划</h2>
+    <div class="cover-divider"></div>
+  </div>
+
+  <div class="container">
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">🌏</div><h3>为什么选择中国旅游</h3></div>
+      <div class="section-body">
+        <p style="font-size:13px;color:#444;line-height:2;">中国拥有55项联合国教科文组织世界遗产，数量位居全球第一。从千年古都到现代都市，从壮美山川到江南水乡，从美食天堂到购物天堂——中国为泰国游客提供了无与伦比的旅行体验。泰国游客可享受<strong>中泰互免签证</strong>政策（单次停留不超过30天），也可以申请L签延长停留时间。</p>
+      </div>
+    </div>
+
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">🏙</div><h3>热门旅游城市推荐</h3></div>
+      <div class="section-body">
+        <p style="font-size:12px;color:#888;margin-bottom:14px;">标注「合作院校」的城市同时拥有我们合作的留学项目，游学旅行两相宜。</p>
+        <div class="city-grid">
+          <div class="city-card partner">
+            <div class="cc-tag">合作院校</div>
+            <div class="cc-head" style="background:linear-gradient(135deg,#c41e3a,#e04050);">🏯 北京</div>
+            <div class="cc-body">
+              <div class="cc-name">北京 · 首都</div>
+              <div class="cc-desc">故宫、长城、天安门、颐和园、天坛。北京大学、清华大学所在地。中国政治文化中心，六朝古都。</div>
+            </div>
+          </div>
+          <div class="city-card partner">
+            <div class="cc-tag">合作院校</div>
+            <div class="cc-head" style="background:linear-gradient(135deg,#003a7d,#0070c0);">🌊 大连</div>
+            <div class="cc-body">
+              <div class="cc-name">大连 · 滨海城市</div>
+              <div class="cc-desc">星海广场、金石滩、旅顺口、滨海路。大连理工大学所在地。浪漫海滨城市，夏季避暑胜地。</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#1a3a6e,#2563a8);">🌃 上海</div>
+            <div class="cc-body">
+              <div class="cc-name">上海 · 国际都会</div>
+              <div class="cc-desc">外滩、迪士尼乐园、南京路、豫园。中国经济中心，东西方文化交汇之地。</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#8b6914,#b8960a);">🏛 西安</div>
+            <div class="cc-body">
+              <div class="cc-name">西安 · 千年古都</div>
+              <div class="cc-desc">兵马俑、大雁塔、古城墙、回民街。十三朝古都，丝绸之路起点。</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#2a6e2a,#3a8e3a);">🐼 成都</div>
+            <div class="cc-body">
+              <div class="cc-name">成都 · 天府之国</div>
+              <div class="cc-desc">大熊猫繁育基地、宽窄巷子、都江堰。美食之都（火锅、川菜）、悠闲生活之城。</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#8b1a1a,#b03030);">🌺 广州</div>
+            <div class="cc-body">
+              <div class="cc-name">广州 · 南国明珠</div>
+              <div class="cc-desc">广州塔、白云山、沙面、珠江夜游。华南最大城市，粤菜发源地，购物天堂。</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#1a5a4a,#2a7a5c);">🌿 杭州</div>
+            <div class="cc-body">
+              <div class="cc-name">杭州 · 人间天堂</div>
+              <div class="cc-desc">西湖、灵隐寺、西溪湿地。江南水乡代表，阿里巴巴总部所在地。</div>
+            </div>
+          </div>
+          <div class="city-card">
+            <div class="cc-head" style="background:linear-gradient(135deg,#4a6a1a,#5a8a2a);">🌸 昆明</div>
+            <div class="cc-body">
+              <div class="cc-name">昆明 · 春城</div>
+              <div class="cc-desc">石林、滇池、翠湖公园。四季如春，云南少数民族文化体验。距泰国最近的省会城市之一。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="margin-top:20px;">
+      <div class="section-header"><div class="ic">🛂</div><h3>签证服务</h3></div>
+      <div class="section-body">
+        <p style="font-size:12.5px;color:#666;line-height:1.9;">赴华旅游签证（L签）代办服务。提供<strong>材料审核、申请表填写、预约递交、进度追踪</strong>全流程支持。也可协助办理多次往返签证、商务签证（M签）等。具体签证政策、所需材料及费用请咨询留学顾问获取最新信息。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ #contact-zh — 联系我们 ══ -->
+<div id="contact-zh">
+  <div class="container" style="margin-top:30px;">
+    <div class="section">
+      <div class="section-header"><div class="ic">📞</div><h3>联系我们</h3></div>
+      <div class="section-body">
+        <div class="agent-box">
+          <h4>免费咨询 · 留学顾问全程服务</h4>
+          <p style="margin-bottom:20px;">中泰双语留学顾问为您提供从选校规划到入学报道的一站式服务。无论您想咨询赴华留学、短期游学还是旅游签证，我们都将以专业的态度为您解答。</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;font-size:12.5px;margin-bottom:20px;text-align:left;max-width:500px;margin-left:auto;margin-right:auto;">
+            <div>✓ 选校选专业方案规划</div><div>✓ 材料翻译与公证认证</div>
+            <div>✓ HSK备考规划指导</div><div>✓ 网申代办与文书润色</div>
+            <div>✓ 签证办理全程协助</div><div>✓ 行前培训与接机安排</div>
+            <div>✓ 住宿预订与入学引导</div><div>✓ 留学期间持续支持</div>
+            <div>✓ 游学项目报名咨询</div><div>✓ 旅游签证代办服务</div>
+          </div>
+          <p style="font-size:12px;opacity:.75;">LazyFirst Co., Ltd. · DBD: 0505568124460 · 清迈 · 泰国</p>
+          <p style="font-size:12px;opacity:.75;">KOOLPUNT VILLE 9, 77/406 Moo 8, Hang Dong, Chiang Mai 50230</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /panel-zh -->
 
 <!-- ══ Footer ══ -->
 <footer>
@@ -199,8 +755,12 @@
     77/406 หมู่ 8 หมู่บ้านกุลพันธ์วิลล์ 9, ตำบลบ้านแหวน, อำเภอหางดง, จังหวัดเชียงใหม่ 50230
   </div>
   <div class="ft-links">
-    <a href="schools/dlut.html">大连理工大学招生</a>
-    <a href="#services">服务项目</a>
+    <a href="#home">首页</a>
+    <a href="schools/dlut.html">大连理工招生</a>
+    <a href="schools/gnu.html">国立昌原大学</a>
+    <a href="#study">赴华留学</a>
+    <a href="#tours">短期游学</a>
+    <a href="#travel">赴华旅游</a>
     <a href="#contact">联系我们</a>
   </div>
   <div class="ft-powered"><a href="https://visitchina.lazyfirst.com/staff/advisor.html">Powered by LazyFirst</a></div>
@@ -209,5 +769,45 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+// Smooth scroll for anchor links (supports both TH and ZH panels)
+function scrollToSection(id) {
+  // Try current visible panel first
+  var t = document.getElementById(id);
+  if (!t || t.offsetParent === null) {
+    // Try -zh or -th suffix
+    t = document.getElementById(id + '-zh') || document.getElementById(id + '-th');
+  }
+  if (t) { t.scrollIntoView({behavior:'smooth',block:'start'}); }
+}
+
+document.querySelectorAll('.brand-nav a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var href = this.getAttribute('href');
+    if (href && href.length > 1) {
+      e.preventDefault();
+      scrollToSection(href.substring(1));
+    }
+  });
+});
+
+// Active nav state on scroll
+function updateActiveNav(){
+  var y = window.scrollY + 80;
+  var activePanel = document.querySelector('.panel.active');
+  if (!activePanel) return;
+  var secs = activePanel.querySelectorAll('[id]');
+  var navs = document.querySelectorAll('.brand-nav > a[href^="#"]');
+  secs.forEach(function(s){
+    if (s.offsetTop <= y && s.offsetTop + s.offsetHeight > y) {
+      var id = s.getAttribute('id').replace(/-zh$/,'').replace(/-th$/,'');
+      navs.forEach(function(n){
+        n.classList.toggle('active', n.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}
+window.addEventListener('scroll', updateActiveNav);
+</script>
 </body>
 </html>
