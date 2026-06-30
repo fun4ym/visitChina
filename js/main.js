@@ -77,6 +77,47 @@
   });
 })();
 
+// ── Nav Anchor Redirect (bilingual panel-aware) ──
+(function(){
+  var navLinks = document.querySelectorAll('.brand-nav a[href^="#"], .brand-logo[href^="#"]');
+  if (!navLinks.length) return;
+
+  // Determine which panel is active → get target ID suffix
+  function resolveAnchor(hash) {
+    var id = hash.replace('#', '');
+    var activePanel = document.querySelector('.panel.active');
+    if (!activePanel) return id;
+
+    if (activePanel.id === 'panel-zh') {
+      // ZH panel uses -zh suffix except for home which is home-zh
+      return id + '-zh';
+    }
+    // TH panel uses bare IDs — no change
+    return id;
+  }
+
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var hash = this.getAttribute('href');
+      if (!hash || hash === '#') return; // skip disabled links
+
+      // Skip the 更多▸ sub-trigger and disabled links
+      if (this.closest('.dropdown-sub')) return;
+      if (this.classList.contains('dd-disabled')) return;
+
+      e.preventDefault();
+
+      var targetId = resolveAnchor(hash);
+      var target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Update URL hash without triggering another scroll
+        history.replaceState(null, null, '#' + targetId);
+      }
+    });
+  });
+})();
+
 // ── Cost Calculator (interactive slider) ──
 (function(){
   var calcForm = document.getElementById('cost-calc');
