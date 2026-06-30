@@ -50,10 +50,13 @@
   var savedLang = localStorage.getItem('visitChina_lang') || 'th';
   document.body.className = 'lang-' + savedLang;
 
-  // ── Sub-page: check if EN mode was active ──
+  // ── Sub-page: check if EN mode was active (3-panel pages only) ──
   if (!isMainPage) {
-    var subState = localStorage.getItem('visitChina_sub_en');
-    if (subState === '1') document.body.classList.add('lang-en');
+    var hasEnPanel = document.querySelector('#panel-en');
+    if (hasEnPanel) {
+      var subState = localStorage.getItem('visitChina_sub_en');
+      if (subState === '1') document.body.classList.add('lang-en');
+    }
   }
 
   // ── Update toggle button label ──
@@ -63,12 +66,19 @@
         ? '🇨🇳 中文'
         : '🇹🇭 ไทย';
     } else {
+      var hasEnPanel = document.querySelector('#panel-en');
       var en = document.body.classList.contains('lang-en');
       var th = document.body.classList.contains('lang-th');
-      if (en) {
-        toggleBtn.innerHTML = th ? '🇹🇭 ไทย' : '🇨🇳 中文';
+      if (hasEnPanel) {
+        // 3-panel sub-page: native ↔ EN
+        if (en) {
+          toggleBtn.innerHTML = th ? '🇹🇭 ไทย' : '🇨🇳 中文';
+        } else {
+          toggleBtn.innerHTML = '🇬🇧 English';
+        }
       } else {
-        toggleBtn.innerHTML = '🇬🇧 English';
+        // 2-panel sub-page: TH ↔ ZH (e.g. gnu.html)
+        toggleBtn.innerHTML = th ? '🇨🇳 中文' : '🇹🇭 ไทย';
       }
     }
   }
@@ -84,10 +94,20 @@
       localStorage.setItem('visitChina_lang', newLang);
       window.scrollTo({top: 0, behavior: 'smooth'});
     } else {
-      // Sub-page: toggle native ↔ EN
-      document.body.classList.toggle('lang-en');
-      var isEn = document.body.classList.contains('lang-en');
-      localStorage.setItem('visitChina_sub_en', isEn ? '1' : '0');
+      var hasEnPanel = document.querySelector('#panel-en');
+      if (hasEnPanel) {
+        // 3-panel: toggle native ↔ EN
+        document.body.classList.toggle('lang-en');
+        var isEn = document.body.classList.contains('lang-en');
+        localStorage.setItem('visitChina_sub_en', isEn ? '1' : '0');
+      } else {
+        // 2-panel: toggle TH ↔ ZH
+        var isTh = document.body.classList.contains('lang-th');
+        var newLang = isTh ? 'zh' : 'th';
+        document.body.className = 'lang-' + newLang;
+        localStorage.setItem('visitChina_lang', newLang);
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
     }
     updateBtn();
 
